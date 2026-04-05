@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: stylora
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d stylora']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - stylora-postgres-data-v18:/var/lib/postgresql
+
+volumes:
+  stylora-postgres-data-v18:

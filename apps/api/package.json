@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "type": "module",
+  "scripts": {
+    "db:migrate": "pnpm --filter @stylora/db migrate",
+    "dev": "pnpm --filter @stylora/db build && pnpm --filter @stylora/auth build && pnpm --filter @stylora/db wait && pnpm run db:migrate && tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@stylora/auth": "workspace:*",
+    "@stylora/db": "workspace:*",
+    "@hono/node-server": "^1.19.12",
+    "hono": "^4.12.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "packageManager": "pnpm@10.33.0",
+  "type": "module",
+  "name": "stylora",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "test": "turbo test",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "prepare": "husky",
+    "db:up": "docker compose up -d db && pnpm --filter @stylora/db wait",
+    "db:down": "docker compose down",
+    "db:generate": "pnpm --filter @stylora/db generate",
+    "db:migrate": "pnpm --filter @stylora/db migrate",
+    "db:studio": "pnpm --filter @stylora/db studio",
+    "auth:generate": "pnpm --filter @stylora/auth generate"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,jsx,ts,tsx,json,jsonc,css,md}": "biome check --write --no-errors-on-unmatched"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "turbo": "^2.5.6"
+  }
+}

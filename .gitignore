@@ -1,0 +1,15 @@
+.idea/
+node_modules/
+.turbo/
+dist/
+coverage/
+.angular/
+.DS_Store
+apps/web/node_modules/
+apps/api/node_modules/
+packages/*/node_modules/
+
+# environment
+.env
+.env.*
+!.env.example

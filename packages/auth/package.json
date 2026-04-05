@@ -1,0 +1,32 @@
+{
+  "name": "@stylora/auth",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "generate": "pnpm exec better-auth generate --config src/auth.ts --output ../db/src/auth-schema.ts --yes"
+  },
+  "dependencies": {
+    "@better-auth/drizzle-adapter": "^1.5.6",
+    "@stylora/db": "workspace:*",
+    "better-auth": "^1.5.6",
+    "drizzle-orm": "^0.45.2"
+  },
+  "devDependencies": {
+    "@better-auth/cli": "^1.4.21",
+    "@types/node": "^25.5.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}
