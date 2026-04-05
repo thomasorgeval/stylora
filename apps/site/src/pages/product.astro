@@ -1,0 +1,96 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro'
+
+const title = 'Product'
+const description =
+  'Stylora organizes database work around teams, projects, and browser-native workflows instead of forcing everything into a loose list of connections.'
+
+const pillars = [
+  {
+    title: 'Projects as the unit of work',
+    copy: 'A project is not a cosmetic label. It is the container for related connections, context, and ownership.',
+  },
+  {
+    title: 'Organizations from day one',
+    copy: 'Even the earliest version respects the way teams actually work together, instead of pretending every setup is a single-user notebook.',
+  },
+  {
+    title: 'A SQL workflow that belongs in the browser',
+    copy: 'The goal is not to mimic a toy admin panel. The goal is to make serious day-to-day work feel natural online.',
+  },
+]
+---
+
+<MarketingLayout title={title} description={description}>
+  <section
+    class="container-frame grid gap-8 py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end lg:py-22"
+  >
+    <div class="space-y-5">
+      <p class="eyebrow">Product</p>
+      <h1 class="section-title !text-[clamp(3rem,6vw,5.2rem)]">
+        Built around teams, not around a lonely list of database credentials.
+      </h1>
+    </div>
+    <p class="section-copy max-w-none">
+      Stylora is intentionally shaped around organizations, projects, and connection workspaces. That model makes the
+      product feel coherent for SaaS teams and gives the browser experience enough structure to be useful over the long
+      term.
+    </p>
+  </section>
+
+  <section class="container-frame grid gap-6 py-6 lg:grid-cols-3">
+    {pillars.map((pillar) => (
+				<article class="panel rounded-[1.9rem] p-7">
+					<p class="metric-label">Core pillar</p>
+					<h2 class="mt-6 font-[var(--font-serif-display)] text-[2rem] leading-[1.02] tracking-[-0.03em] text-[var(--page-ink)]">
+						{pillar.title}
+					</h2>
+					<p class="mt-5 text-[0.98rem] leading-8 text-[var(--page-muted)]">{pillar.copy}</p>
+				</article>
+			))}
+  </section>
+
+  <section class="container-frame py-18">
+    <div class="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <article class="panel rounded-[2rem] p-8 lg:p-10">
+        <p class="eyebrow">Model</p>
+        <h2 class="mt-6 section-title">
+          Organizations contain projects. Projects contain connections. The workspace stays legible.
+        </h2>
+        <p class="mt-5 text-[1rem] leading-8 text-[var(--page-muted)]">
+          That hierarchy sounds simple because it should. The difference is that a lot of web tools never make this
+          decision properly, which leaves teams with a product that always feels flatter than their actual work.
+        </p>
+      </article>
+      <article class="panel rounded-[2rem] p-8 lg:p-10">
+        <p class="eyebrow">Workflow</p>
+        <h2 class="mt-6 section-title">
+          Schema browsing and SQL querying belong in the same calm, deliberate workspace.
+        </h2>
+        <p class="mt-5 text-[1rem] leading-8 text-[var(--page-muted)]">
+          Stylora is aimed at that feeling of keeping a serious tool open throughout the day, not just opening a utility
+          to inspect one table and close it again.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-frame py-6 pb-24">
+    <div class="panel rounded-[2rem] p-8 lg:p-12">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-end">
+        <div class="space-y-4">
+          <p class="eyebrow">Direction</p>
+          <h2 class="section-title">PostgreSQL first. Broader data backends over time.</h2>
+          <p class="section-copy max-w-2xl">
+            The first version earns trust by going deep on PostgreSQL. The longer-term direction is broader than one
+            engine, but the product is careful not to claim support before it exists.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+          <a href="/docs/getting-started" class="button-secondary">Read the docs</a>
+          <a href="/waitlist" class="button-primary">Join waitlist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

@@ -1,0 +1,83 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro'
+
+const title = 'Self-hosting'
+const description =
+  'Deploy Stylora in your own environment and keep control over where the product runs, how it is configured, and how your team accesses it.'
+
+const reasons = [
+  'Keep the product inside your own infrastructure boundary.',
+  'Start with a deployment model your team can inspect and operate directly.',
+  'Adopt the browser workflow now, without waiting for managed cloud to exist first.',
+]
+---
+
+<MarketingLayout title={title} description={description}>
+  <section
+    class="container-frame grid gap-8 py-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-end lg:py-22"
+  >
+    <div class="space-y-5">
+      <p class="eyebrow">Self-hosting</p>
+      <h1 class="section-title !text-[clamp(3rem,6vw,5.2rem)]">Run Stylora where your team already works.</h1>
+    </div>
+    <p class="section-copy max-w-none">
+      Stylora is designed to be useful in self-hosted environments first. That keeps the first release honest for
+      technical teams and lets you adopt the workspace without giving up deployment control.
+    </p>
+  </section>
+
+  <section class="container-frame grid gap-6 py-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+    <article class="panel rounded-[2rem] p-8">
+      <p class="metric-label">Why teams start here</p>
+      <ul class="mt-6 space-y-4">
+        {reasons.map((reason) => <li class="text-[1rem] leading-8 text-[var(--page-ink)]">{reason}</li>)}
+      </ul>
+    </article>
+
+    <article class="panel rounded-[2rem] p-8">
+      <p class="metric-label">Quick path</p>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-[1.4rem] border border-[rgba(103,114,91,0.14)] bg-white/72 p-5">
+          <p class="metric-label">1</p>
+          <p class="mt-3 text-lg font-semibold tracking-[-0.03em] text-[var(--page-ink)]">Install dependencies</p>
+          <p class="mt-2 text-sm leading-7 text-[var(--page-muted)]">
+            Use the monorepo setup to install packages and bootstrap local services.
+          </p>
+        </div>
+        <div class="rounded-[1.4rem] border border-[rgba(103,114,91,0.14)] bg-white/72 p-5">
+          <p class="metric-label">2</p>
+          <p class="mt-3 text-lg font-semibold tracking-[-0.03em] text-[var(--page-ink)]">Configure environment</p>
+          <p class="mt-2 text-sm leading-7 text-[var(--page-muted)]">
+            Point Stylora at the application database, auth settings, and runtime domains.
+          </p>
+        </div>
+        <div class="rounded-[1.4rem] border border-[rgba(103,114,91,0.14)] bg-white/72 p-5">
+          <p class="metric-label">3</p>
+          <p class="mt-3 text-lg font-semibold tracking-[-0.03em] text-[var(--page-ink)]">Open the workspace</p>
+          <p class="mt-2 text-sm leading-7 text-[var(--page-muted)]">
+            Once the app is up, your team gets the browser-native workflow without switching tools again.
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="container-frame py-18 pb-24">
+    <div class="panel rounded-[2rem] p-8 lg:p-12">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end">
+        <div class="space-y-4">
+          <p class="eyebrow">Documentation</p>
+          <h2 class="section-title">The docs should get you from repository to running workspace without guesswork.</h2>
+          <p class="section-copy max-w-2xl">
+            Setup, concepts, and deployment live in one place so the product pitch and the operational reality stay
+            aligned.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+          <a href="/docs/self-hosting" class="button-secondary">Open self-hosting docs</a>
+          <a href="/waitlist" class="button-primary">Join waitlist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

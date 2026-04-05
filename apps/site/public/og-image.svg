@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#f3ede1"/>
+  <rect x="54" y="54" width="1092" height="522" rx="28" fill="#fbf8f1" stroke="#cfc4ae"/>
+  <path d="M0 0h1200v630H0z" fill="url(#grid)" opacity=".38"/>
+  <rect x="94" y="104" width="122" height="122" rx="28" fill="#f4f0e6"/>
+  <path d="M124.5 141.458c0-5.223 4.236-9.458 9.458-9.458h41.584c5.222 0 9.458 4.235 9.458 9.458v2.837H124.5v-2.837Z" fill="#2D3129"/>
+  <path d="M124.5 151.216H185.5v34.326c0 5.222-4.236 9.458-9.458 9.458h-42.084c-5.222 0-9.458-4.236-9.458-9.458v-34.326Z" fill="#DDD4BF"/>
+  <path d="M139.75 167.228c0-6.445 5.225-11.67 11.67-11.67h19.88v7.572h-19.88a4.098 4.098 0 0 0-4.097 4.098 4.097 4.097 0 0 0 4.097 4.098h6.31c6.445 0 11.67 5.224 11.67 11.669 0 6.445-5.225 11.67-11.67 11.67h-17.98v-7.573h17.98a4.098 4.098 0 1 0 0-8.196h-6.31c-6.445 0-11.67-5.225-11.67-11.67Z" fill="#56604C"/>
+  <circle cx="136.562" cy="138.381" r="3.152" fill="#DDD4BF"/>
+  <circle cx="147.917" cy="138.381" r="3.152" fill="#DDD4BF"/>
+  <circle cx="159.271" cy="138.381" r="3.152" fill="#DDD4BF"/>
+  <text x="276" y="210" fill="#23271f" font-family="Georgia, serif" font-size="72" letter-spacing="-3">Stylora</text>
+  <text x="276" y="292" fill="#23271f" font-family="Georgia, serif" font-size="54" letter-spacing="-2">The browser-native PostgreSQL workspace</text>
+  <text x="276" y="346" fill="#4f5648" font-family="Arial, sans-serif" font-size="28">Structured for organizations and projects. Self-hosted today, managed cloud next.</text>
+  <rect x="94" y="404" width="1012" height="116" rx="22" fill="#efe6d4" stroke="#d9ccb4"/>
+  <text x="132" y="455" fill="#5d6555" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">WHY IT STANDS OUT</text>
+  <text x="132" y="499" fill="#23271f" font-family="Arial, sans-serif" font-size="28">A complete online alternative to desktop database tools, without flat connection lists or ugly web admin vibes.</text>
+  <defs>
+    <pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+      <path d="M72 0H0V72" stroke="#6E765D" stroke-opacity=".28"/>
+    </pattern>
+  </defs>
+</svg>

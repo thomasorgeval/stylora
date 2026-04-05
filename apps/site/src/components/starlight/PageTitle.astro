@@ -1,0 +1,85 @@
+---
+const { entry } = Astro.locals.starlightRoute
+const source = entry.body ?? ''
+const sourceJson = JSON.stringify(source).replaceAll('</scr' + 'ipt>', '<\\/script>')
+const pageTitleId = '_top'
+---
+
+<div class="sl-page-title-row">
+  <h1 id={pageTitleId}>{entry.data.title}</h1>
+  {source && (
+      <>
+        <button class="sl-copy-markdown" type="button" data-copy-markdown>
+          <span data-copy-markdown-label>Copy markdown</span>
+        </button>
+        <script type="application/json" data-markdown-source set:html={sourceJson}></script>
+      </>
+    )}
+</div>
+
+<script>
+document.querySelectorAll('[data-copy-markdown]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const sourceScript = button.parentElement?.querySelector('[data-markdown-source]')
+    const label = button.querySelector('[data-copy-markdown-label]')
+    if (!(sourceScript instanceof HTMLScriptElement) || !(label instanceof HTMLElement)) return
+
+    const originalLabel = label.textContent ?? 'Copy markdown'
+
+    try {
+      const markdown = JSON.parse(sourceScript.textContent ?? '""')
+      await navigator.clipboard.writeText(markdown)
+      label.textContent = 'Copied'
+    } catch {
+      label.textContent = 'Copy failed'
+    }
+
+    window.setTimeout(() => {
+      label.textContent = originalLabel
+    }, 1600)
+  })
+})
+</script>
+
+<style>
+@layer starlight.core {
+  .sl-page-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .sl-page-title-row h1 {
+    margin-top: 0;
+    font-size: var(--sl-text-h1);
+    line-height: var(--sl-line-height-headings);
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .sl-copy-markdown {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+    color: var(--sl-color-gray-2);
+    padding: 0.6rem 0.95rem;
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition:
+      background 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease;
+  }
+
+  .sl-copy-markdown:hover,
+  .sl-copy-markdown:focus-visible {
+    border-color: var(--sl-color-accent-high);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--sl-color-white);
+  }
+}
+</style>

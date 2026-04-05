@@ -1,0 +1,55 @@
+---
+title: Configuration
+description: High-level configuration notes for the current Stylora repository.
+---
+
+## Public domains
+
+- `stylora.xyz`: Astro marketing site
+- `stylora.xyz/docs`: Starlight documentation
+- `app.stylora.xyz`: Angular product app
+
+## Waitlist configuration
+
+The waitlist page expects a public form endpoint URL if you want submissions to work from the static site.
+
+```bash
+PUBLIC_WAITLIST_FORM_URL=https://formspree.io/f/mjgppnjb
+```
+
+This is useful when you want a native-looking form in the site while still outsourcing storage and automation to an external provider.
+
+The site currently ships with the Formspree endpoint above as a built-in fallback. Keep `PUBLIC_WAITLIST_FORM_URL` if you want to override it later without changing the code.
+
+### With the current GitHub Actions deployment
+
+The Astro site is built in GitHub Actions before being uploaded to Cloudflare Pages. That means `PUBLIC_WAITLIST_FORM_URL` must be available during the GitHub Actions build.
+
+Recommended setup:
+
+- define `PUBLIC_WAITLIST_FORM_URL` in **GitHub repository variables**
+- the workflow injects it into the Astro build automatically
+
+If you define it only in Cloudflare Pages settings, it will **not** affect the current build pipeline because Pages is only receiving the prebuilt `dist/` output.
+
+### If you switch to Cloudflare Pages native builds later
+
+In that case, define `PUBLIC_WAITLIST_FORM_URL` in the Cloudflare Pages project settings under environment variables.
+
+## Cloudflare Pages secrets
+
+Expected GitHub secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_SITE_PAGES_PROJECT_NAME`
+- `CLOUDFLARE_APP_PAGES_PROJECT_NAME`
+
+Expected GitHub variables:
+
+- `PUBLIC_WAITLIST_FORM_URL`
+
+## Build outputs
+
+- Astro site output: `apps/site/dist`
+- Angular app output: `apps/web/dist/web/browser`

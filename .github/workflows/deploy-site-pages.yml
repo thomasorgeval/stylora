@@ -1,0 +1,45 @@
+name: Deploy Site to Cloudflare Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-site-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_PAGES_PROJECT_NAME: ${{ secrets.CLOUDFLARE_SITE_PAGES_PROJECT_NAME }}
+      PUBLIC_WAITLIST_FORM_URL: ${{ vars.PUBLIC_WAITLIST_FORM_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Astro site
+        run: pnpm --filter site build
+
+      - name: Deploy Astro site to Cloudflare Pages
+        run: pnpm dlx wrangler@4 pages deploy apps/site/dist --project-name "$CLOUDFLARE_PAGES_PROJECT_NAME"

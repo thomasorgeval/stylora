@@ -1,0 +1,83 @@
+---
+import SiteFooter from '../components/SiteFooter.astro'
+import SiteHeader from '../components/SiteHeader.astro'
+import '../styles/site.css'
+
+interface Props {
+  title: string
+  description: string
+  image?: string
+}
+
+const { title, description, image = '/og-image.svg' } = Astro.props
+const canonical = new URL(Astro.url.pathname, Astro.site)
+const ogImage = new URL(image, Astro.site)
+const siteUrl = new URL('/', Astro.site)
+const structuredData =
+  Astro.url.pathname === '/'
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Stylora',
+          url: siteUrl,
+          description,
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: 'Stylora',
+          applicationCategory: 'DeveloperApplication',
+          operatingSystem: 'Web',
+          description,
+          url: canonical,
+        },
+      ]
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: `${title} | Stylora`,
+        description,
+        url: canonical,
+        isPartOf: {
+          '@type': 'WebSite',
+          name: 'Stylora',
+          url: siteUrl,
+        },
+      }
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content={Astro.generator}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href={canonical}>
+    <title>{title} | Stylora</title>
+    <meta name="description" content={description}>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:site_name" content="Stylora">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={`${title} | Stylora`}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content={canonical}>
+    <meta property="og:image" content={ogImage}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={`${title} | Stylora`}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+    <meta name="theme-color" content="#f4f0e6">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs guide">
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <SiteHeader />
+      <main class="relative z-10"><slot /></main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>

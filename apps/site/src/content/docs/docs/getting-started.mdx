@@ -1,0 +1,60 @@
+---
+title: Getting started
+description: Understand Stylora's current product scope and choose the right starting path.
+---
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+
+## What Stylora is today
+
+Stylora is a browser-native workspace for PostgreSQL teams.
+
+It is deliberately **PostgreSQL first** right now. The longer-term product direction can support broader data backends, but the first release earns trust by doing one workflow well.
+
+## Choose your path
+
+<Tabs>
+	<TabItem label="Self-hosted">
+		Use this path if your team wants to run Stylora inside its own infrastructure today.
+
+		- You control where the product runs.
+		- You keep the first deployment model straightforward.
+		- You can adopt the browser workflow now without waiting for managed cloud.
+	</TabItem>
+	<TabItem label="Managed cloud">
+		Use this path if you want the Stylora workflow without operating it yourself.
+
+		- Join the waitlist for hosted access.
+		- Expect the same organizations and projects model.
+		- Treat cloud as a continuation of the product, not a separate simplified edition.
+	</TabItem>
+</Tabs>
+
+## Local development
+
+<Steps>
+	1. Install dependencies.
+	2. Copy the environment file template.
+	3. Start the local PostgreSQL container.
+	4. Start the workspace in development mode.
+</Steps>
+
+```bash
+pnpm install
+cp .env.example .env
+pnpm db:up
+pnpm dev
+```
+
+## Monorepo shape
+
+- `apps/site`: Astro marketing site and Starlight docs served on `stylora.xyz`
+- `apps/web`: Angular product app, intended for `app.stylora.xyz`
+- `apps/api`: Hono backend
+- `packages/*`: shared database, auth, and contracts packages
+
+## Next reads
+
+- Read [Self-hosting](/docs/self-hosting/) if you want to deploy now.
+- Read [Cloud](/docs/cloud/) if you want hosted access later.
+- Read [Organizations and projects](/docs/concepts/organizations-and-projects/) to understand the product model.

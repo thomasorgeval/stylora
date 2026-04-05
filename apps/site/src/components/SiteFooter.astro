@@ -1,0 +1,56 @@
+---
+const footerGroups = [
+  {
+    label: 'Site',
+    items: [
+      { href: '/product', label: 'Product' },
+      { href: '/self-hosting', label: 'Self-hosting' },
+      { href: '/cloud', label: 'Cloud' },
+    ],
+  },
+  {
+    label: 'Resources',
+    items: [
+      { href: '/docs', label: 'Documentation' },
+      { href: '/docs/getting-started', label: 'Getting started' },
+      { href: '/waitlist', label: 'Waitlist' },
+    ],
+  },
+  {
+    label: 'Product',
+    items: [
+      { href: 'https://app.stylora.xyz', label: 'Application' },
+      { href: '/docs/concepts/organizations-and-projects', label: 'Organizations & projects' },
+      { href: '/docs/reference/configuration', label: 'Configuration' },
+    ],
+  },
+]
+---
+
+<footer class="relative z-10 border-t border-[color:rgba(109,120,91,0.14)] bg-[rgba(246,241,231,0.78)]">
+  <div class="container-frame grid gap-10 py-12 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,2fr)] lg:items-start">
+    <div class="space-y-4">
+      <p class="eyebrow">Stylora</p>
+      <h2
+        class="max-w-lg font-[var(--font-serif-display)] text-[2rem] leading-[0.98] tracking-[-0.04em] text-[var(--page-ink)]"
+      >
+        A browser-native workspace for teams who expect more than a thin database admin panel.
+      </h2>
+      <p class="max-w-xl text-[0.98rem] leading-8 text-[var(--page-muted)]">
+        PostgreSQL first. Structured around organizations and projects. Available self-hosted now, with managed cloud
+        for teams that want the same workflow without the operational lift.
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-3">
+      {footerGroups.map((group) => (
+					<div class="space-y-4">
+						<p class="metric-label">{group.label}</p>
+						<ul class="space-y-3">
+							{group.items.map((item) => <li><a href={item.href} class="nav-link">{item.label}</a></li>)}
+						</ul>
+					</div>
+				))}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+---
+import BrandMark from './BrandMark.astro'
+
+const navItems = [
+  { href: '/product', label: 'Product' },
+  { href: '/self-hosting', label: 'Self-host' },
+  { href: '/docs', label: 'Docs' },
+  { href: '/cloud', label: 'Cloud' },
+]
+---
+
+<header
+  class="relative z-10 border-b border-[color:rgba(109,120,91,0.14)] bg-[rgba(248,244,236,0.72)] backdrop-blur-xl"
+>
+  <div class="container-frame flex flex-col gap-4 py-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+    <div class="flex items-center justify-between gap-4">
+      <a
+        href="/"
+        class="flex items-center gap-3 text-[0.98rem] font-semibold tracking-[-0.02em] text-[var(--page-ink)]"
+      >
+        <BrandMark />
+        <span>Stylora</span>
+      </a>
+      <a href="/waitlist" class="button-primary lg:hidden">Join waitlist</a>
+    </div>
+
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
+      <nav class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        {navItems.map((item) => (
+						<a href={item.href} class="nav-link">
+							{item.label}
+						</a>
+						))}
+        <a href="https://app.stylora.xyz" class="nav-link" rel="noreferrer">App</a>
+      </nav>
+
+      <div class="hidden lg:flex lg:items-center lg:gap-3">
+        <a href="/docs/getting-started" class="button-secondary">Read docs</a>
+        <a href="/waitlist" class="button-primary">Join waitlist</a>
+      </div>
+    </div>
+  </div>
+</header>

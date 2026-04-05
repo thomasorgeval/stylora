@@ -1,0 +1,86 @@
+@layer base, starlight, theme, components, utilities;
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/instrument-sans";
+@import "@astrojs/starlight-tailwind";
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --font-sans: "Instrument Sans Variable", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+  --color-accent-50: var(--color-emerald-50);
+  --color-accent-100: var(--color-emerald-100);
+  --color-accent-200: var(--color-emerald-200);
+  --color-accent-300: var(--color-emerald-300);
+  --color-accent-400: var(--color-emerald-400);
+  --color-accent-500: var(--color-emerald-500);
+  --color-accent-600: var(--color-emerald-600);
+  --color-accent-700: var(--color-emerald-700);
+  --color-accent-800: var(--color-emerald-800);
+  --color-accent-900: var(--color-emerald-900);
+  --color-accent-950: var(--color-emerald-950);
+  --color-gray-50: var(--color-stone-50);
+  --color-gray-100: var(--color-stone-100);
+  --color-gray-200: var(--color-stone-200);
+  --color-gray-300: var(--color-stone-300);
+  --color-gray-400: var(--color-stone-400);
+  --color-gray-500: var(--color-stone-500);
+  --color-gray-600: var(--color-stone-600);
+  --color-gray-700: var(--color-stone-700);
+  --color-gray-800: var(--color-stone-800);
+  --color-gray-900: var(--color-stone-900);
+  --color-gray-950: var(--color-stone-950);
+}
+
+:root {
+  --sl-content-width: 50rem;
+  --sl-text-5xl: 3.35rem;
+  --sl-text-h1: clamp(2.5rem, 4vw, 3.5rem);
+  --sl-text-h2: clamp(1.7rem, 2.5vw, 2.25rem);
+  --sl-text-body: 1rem;
+  --sl-font: "Instrument Sans Variable", "Helvetica Neue", sans-serif;
+  --sl-font-system: "Instrument Sans Variable", "Helvetica Neue", sans-serif;
+  --sl-font-title: "Newsreader Variable", Georgia, serif;
+  --sl-line-height: 1.72;
+}
+
+main {
+  font-family: var(--sl-font);
+}
+
+.hero h1,
+.content-panel h1,
+.content-panel h2,
+.content-panel .sl-markdown-content :where(h1, h2) {
+  font-family: var(--sl-font-title);
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.9), rgba(249, 244, 235, 0.72)), var(--sl-color-gray-50);
+  border: 1px solid rgba(121, 130, 111, 0.18);
+  border-radius: 1.75rem;
+  box-shadow: 0 28px 70px rgba(47, 43, 33, 0.08);
+}
+
+.hero .tagline {
+  max-width: 40rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--sl-color-gray-600);
+}
+
+.card {
+  border-radius: 1.35rem;
+}
+
+.sl-markdown-content :where(code:not(pre code)) {
+  border-radius: 0.45rem;
+  padding-inline: 0.35rem;
+  padding-block: 0.15rem;
+}
+
+.sl-page-title-row {
+  margin-bottom: 1rem;
+}

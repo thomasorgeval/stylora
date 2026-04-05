@@ -1,0 +1,47 @@
+---
+title: Self-hosting
+description: Run Stylora inside your own environment.
+---
+
+## Why self-hosting comes first
+
+Stylora launches self-hosted first because it is the most direct way to ship a serious browser workspace for PostgreSQL teams without pretending the hosted path is already finished.
+
+This gives early users:
+
+- control over deployment and access
+- a product they can inspect directly
+- a real workflow today instead of a roadmap promise
+
+## Current setup flow
+
+```bash
+pnpm install
+cp .env.example .env
+pnpm db:up
+pnpm dev
+```
+
+Local services:
+
+- marketing site: `http://localhost:4321`
+- Angular app: `http://localhost:4200`
+- API: `http://localhost:3000`
+- PostgreSQL: `localhost:5432`
+
+## Production shape
+
+Recommended public routing:
+
+- `stylora.xyz` for the marketing site and docs
+- `stylora.xyz/docs` for Starlight documentation
+- `app.stylora.xyz` for the Angular product app
+
+## Deployment notes
+
+The repository includes GitHub Actions workflows for Cloudflare Pages deployments:
+
+- one workflow for the Astro site
+- one workflow for the Angular app
+
+Configure your domains in Cloudflare Pages after the first successful deployment.

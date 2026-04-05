@@ -1,0 +1,72 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro'
+
+const title = 'Cloud'
+const description =
+  'Join the waitlist for managed Stylora: the same browser-native workspace model, without the overhead of running it yourself.'
+
+const cloudPoints = [
+  'Keep the organizations and projects model instead of moving to a flatter hosted tool.',
+  'Stay with the same product shape as the self-hosted edition.',
+  'Reduce operational work when your team wants the workflow more than the deployment responsibility.',
+]
+---
+
+<MarketingLayout title={title} description={description}>
+  <section
+    class="container-frame grid gap-8 py-16 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-end lg:py-22"
+  >
+    <div class="space-y-5">
+      <p class="eyebrow">Managed cloud</p>
+      <h1 class="section-title !text-[clamp(3rem,6vw,5.2rem)]">Same workspace model. Less operational drag.</h1>
+    </div>
+    <p class="section-copy max-w-none">
+      Stylora starts self-hosted because that is the most honest way to launch it. The managed cloud is the next step
+      for teams who want the same structure and the same browser workflow without operating the stack.
+    </p>
+  </section>
+
+  <section class="container-frame grid gap-6 py-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+    <article class="panel rounded-[2rem] p-8">
+      <p class="metric-label">What carries over</p>
+      <ul class="mt-6 space-y-4">
+        {cloudPoints.map((point) => <li class="text-[1rem] leading-8 text-[var(--page-ink)]">{point}</li>)}
+      </ul>
+    </article>
+
+    <article class="panel rounded-[2rem] p-8">
+      <p class="metric-label">Current status</p>
+      <h2
+        class="mt-6 font-[var(--font-serif-display)] text-[2.4rem] leading-[1.02] tracking-[-0.04em] text-[var(--page-ink)]"
+      >
+        PostgreSQL first, cloud next.
+      </h2>
+      <p class="mt-5 text-[1rem] leading-8 text-[var(--page-muted)]">
+        The waitlist is where we gather the first teams who want the hosted version. That lets the cloud offer grow out
+        of real demand rather than generic pricing-page theater.
+      </p>
+      <a href="/waitlist" class="mt-8 button-primary">Join waitlist</a>
+    </article>
+  </section>
+
+  <section class="container-frame py-18 pb-24">
+    <div class="panel rounded-[2rem] p-8 lg:p-12">
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-end">
+        <div class="space-y-4">
+          <p class="eyebrow">Readiness</p>
+          <h2 class="section-title">
+            If your team wants hosted access later, the work you do now should still map cleanly.
+          </h2>
+          <p class="section-copy max-w-2xl">
+            That continuity matters. The point is not just to offer a hosted button. The point is to keep the same
+            coherent product model across both deployment modes.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:justify-end">
+          <a href="/docs/cloud" class="button-secondary">Read cloud docs</a>
+          <a href="/waitlist" class="button-primary">Request access</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

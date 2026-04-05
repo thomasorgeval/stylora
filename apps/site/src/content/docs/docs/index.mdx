@@ -1,0 +1,33 @@
+---
+title: Stylora docs
+description: Deploy, run, and understand Stylora.
+template: splash
+hero:
+  title: Documentation for a browser-native PostgreSQL workspace
+  tagline: Self-host Stylora today, understand the workspace model, and prepare for the managed cloud path without treating the docs like an afterthought.
+  actions:
+    - text: Getting started
+      link: /docs/getting-started/
+      icon: right-arrow
+    - text: Self-hosting
+      link: /docs/self-hosting/
+      icon: right-arrow
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+<CardGrid stagger>
+	<Card title="Getting started" icon="rocket">
+		Pick the right path for your team, then move from repository to running workspace.
+	</Card>
+	<Card title="Self-hosting" icon="setting">
+		Understand the local setup, deployment shape, and why Stylora launches self-hosted first.
+	</Card>
+	<Card title="Cloud" icon="document">
+		See how the hosted path is positioned and what remains consistent between deployment modes.
+	</Card>
+	<Card title="Concepts" icon="open-book">
+		Learn why organizations, projects, and connections are central to the product model.
+	</Card>
+</CardGrid>

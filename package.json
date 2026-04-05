@@ -4,7 +4,8 @@
   "name": "stylora",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
+    "dev": "turbo dev --filter=!site",
+    "dev:site": "pnpm --filter site dev",
     "build": "turbo build",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",

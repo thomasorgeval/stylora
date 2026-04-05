@@ -22,6 +22,7 @@ The broader product direction includes project management, PostgreSQL connection
 
 ```text
 apps/
+  site/       Astro marketing site + Starlight docs
   web/        Angular frontend
   api/        Hono backend
 packages/
@@ -35,6 +36,8 @@ packages/
 - `pnpm`
 - `turbo`
 - `Angular`
+- `Astro`
+- `Starlight`
 - `Hono`
 - `Better Auth`
 - `Drizzle ORM`
@@ -59,6 +62,7 @@ pnpm dev
 
 Default local services:
 
+- marketing site: `http://localhost:4321`
 - web app: `http://localhost:4200`
 - API: `http://localhost:3000`
 - PostgreSQL: `localhost:5432`
@@ -66,7 +70,8 @@ Default local services:
 ## Useful Commands
 
 ```bash
-pnpm dev           # run the workspace in development
+pnpm dev           # run the workspace in development, excluding the marketing site
+pnpm dev:site      # run the Astro marketing site locally
 pnpm build         # build all packages and apps
 pnpm test          # run tests across the monorepo
 pnpm lint          # run Biome checks
@@ -75,7 +80,17 @@ pnpm db:up         # start the local PostgreSQL container
 pnpm db:down       # stop local services
 pnpm db:migrate    # run database migrations
 pnpm db:studio     # open Drizzle Studio
+pnpm --filter site build  # build the Astro site only
 ```
+
+## Deployment
+
+Cloudflare Pages is the expected deployment target:
+
+- `stylora.xyz` for `apps/site`
+- `app.stylora.xyz` for `apps/web`
+
+GitHub Actions workflows are included for both deployments.
 
 ## Contributing
 

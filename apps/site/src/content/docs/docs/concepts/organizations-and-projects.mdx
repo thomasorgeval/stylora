@@ -1,0 +1,28 @@
+---
+title: Organizations and projects
+description: Why Stylora is structured around organizations and projects.
+---
+
+## The problem with a flat connection list
+
+Many online database tools treat every connection as a standalone item. That works for small utilities, but it breaks down quickly for real teams.
+
+## Stylora's model
+
+Stylora starts with a small hierarchy:
+
+- one organization groups the work for a team
+- one organization contains multiple projects
+- one project contains one or more database connections
+
+## Why this matters
+
+This structure makes the browser workspace feel like a real product instead of a pile of credentials.
+
+It also makes future collaboration, permissions, and broader data backends easier to layer in later without reshaping the whole product from scratch.
+
+## What this changes in practice
+
+- connections belong to a context
+- teams can group databases by system or domain
+- the UI can stay legible even as the product grows

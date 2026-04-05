@@ -1,0 +1,91 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro'
+
+const title = 'Waitlist'
+const description = 'Join the Stylora waitlist for managed cloud access and early product updates.'
+const waitlistAction = 'https://formspree.io/f/mjgppnjb'
+---
+
+<MarketingLayout title={title} description={description}>
+  <section
+    class="container-frame grid gap-8 py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:py-22"
+  >
+    <div class="space-y-5">
+      <p class="eyebrow">Waitlist</p>
+      <h1 class="section-title text-[clamp(3rem,6vw,5rem)]!">Join the teams watching Stylora take shape.</h1>
+      <p class="section-copy max-w-xl">
+        Tell us whether you are looking for self-hosted access, managed cloud, or both. That helps prioritize the first
+        operational paths without flattening every use case into the same funnel.
+      </p>
+    </div>
+
+    <div class="panel rounded-4xl p-8 lg:p-10">
+      <form action={waitlistAction} method="post" class="space-y-5">
+        <input type="hidden" name="source" value="stylora.xyz/waitlist">
+        <input type="hidden" name="product" value="Stylora">
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <label class="space-y-2 text-sm font-medium text-(--page-ink)">
+            <span>Email</span>
+            <input
+              class="form-field"
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="team@company.com"
+              required
+            >
+          </label>
+          <label class="space-y-2 text-sm font-medium text-(--page-ink)">
+            <span>Company or team</span>
+            <input class="form-field" type="text" name="team" autocomplete="organization" placeholder="Northwind Labs">
+          </label>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <label class="space-y-2 text-sm font-medium text-(--page-ink)">
+            <span>Preferred path</span>
+            <select class="form-field" name="mode">
+              <option>Cloud</option>
+              <option>Self-hosted</option>
+              <option>Both</option>
+            </select>
+          </label>
+
+          <label class="space-y-2 text-sm font-medium text-(--page-ink)">
+            <span>Current tool</span>
+            <select class="form-field" name="current_tool">
+              <option>DataGrip</option>
+              <option>DBeaver</option>
+              <option>TablePlus</option>
+              <option>pgAdmin</option>
+              <option>Another web tool</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="space-y-2 text-sm font-medium text-(--page-ink)">
+          <span>Optional note</span>
+          <textarea
+            class="form-field min-h-32"
+            name="note"
+            placeholder="What are you missing in current tools?"
+          ></textarea>
+        </label>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <button class="button-primary disabled:pointer-events-none disabled:opacity-55" type="submit">
+            {'Request access'}
+          </button>
+          <a href="/docs/cloud" class="ink-link">Read the cloud docs</a>
+        </div>
+
+        <p class="fine-print">
+          This form posts to Formspree and keeps the Stylora waitlist native to the site instead of bouncing you to a
+          third-party form page.
+        </p>
+      </form>
+    </div>
+  </section>
+</MarketingLayout>
