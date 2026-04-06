@@ -1,10 +1,15 @@
 import { drizzleAdapter } from '@better-auth/drizzle-adapter'
 import { appDb, member, schema } from '@stylora/db'
 import { betterAuth } from 'better-auth'
-import { organization } from 'better-auth/plugins'
+import { organization } from 'better-auth/plugins/organization'
 import { asc, eq } from 'drizzle-orm'
 
-import { getBetterAuthBaseUrl, getBetterAuthSecret } from './env.js'
+import {
+  getBetterAuthBaseUrl,
+  getBetterAuthSecret,
+  getBetterAuthTrustedOrigins,
+  getBetterAuthUseSecureCookies,
+} from './env.js'
 import { buildPersonalOrganization } from './personal-organization.js'
 
 type CreatedUser = {
@@ -22,6 +27,10 @@ const authOptions = {
   appName: 'Stylora',
   baseURL: getBetterAuthBaseUrl(),
   secret: getBetterAuthSecret(),
+  trustedOrigins: getBetterAuthTrustedOrigins(),
+  advanced: {
+    useSecureCookies: getBetterAuthUseSecureCookies(),
+  },
   database: drizzleAdapter(appDb, {
     provider: 'pg',
     schema,

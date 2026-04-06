@@ -1,0 +1,25 @@
+<main class="auth-page">
+  <section class="workspace-card">
+    <p class="workspace-eyebrow">Authenticated workspace</p>
+    <h1>Projects area</h1>
+    <p class="workspace-copy">
+      Sign-in and sign-up are wired. Projects and connections come next.
+    </p>
+
+    <div class="workspace-grid">
+      <div class="workspace-panel">
+        <strong>User</strong>
+        <span>{{ userName() }}</span>
+      </div>
+
+      <div class="workspace-panel">
+        <strong>Email</strong>
+        <span>{{ userEmail() }}</span>
+      </div>
+    </div>
+
+    <button class="workspace-action" type="button" [disabled]="isSigningOut()" (click)="signOut()">
+      {{ isSigningOut() ? 'Signing out...' : 'Sign out' }}
+    </button>
+  </section>
+</main>

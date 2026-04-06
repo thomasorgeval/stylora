@@ -1,0 +1,45 @@
+<main class="auth-page">
+  <section class="auth-card">
+    <p class="auth-eyebrow">Stylora access</p>
+    <h1>Create your account</h1>
+    <p class="auth-copy">Start with your personal organization and connect your first PostgreSQL project.</p>
+
+    <form class="auth-form" (ngSubmit)="signUp()">
+      <div class="auth-field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" [(ngModel)]="name" autocomplete="name" required />
+      </div>
+
+      <div class="auth-field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" [(ngModel)]="email" autocomplete="email" required />
+      </div>
+
+      <div class="auth-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          [(ngModel)]="password"
+          autocomplete="new-password"
+          minlength="8"
+          required
+        />
+      </div>
+
+      @if (errorMessage()) {
+        <p class="auth-error">{{ errorMessage() }}</p>
+      }
+
+      <button class="auth-submit" type="submit" [disabled]="isSubmitting()">
+        {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
+      </button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account?
+      <a routerLink="/sign-in">Sign in</a>
+    </p>
+  </section>
+</main>

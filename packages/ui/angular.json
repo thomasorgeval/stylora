@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "pnpm",
+    "analytics": false
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "ui": {
+      "projectType": "library",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "ui",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr"
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,30 @@
 import { serve } from '@hono/node-server'
-import { auth } from '@stylora/auth'
+import { auth, getBetterAuthTrustedOrigins } from '@stylora/auth'
 import { createAppDb, getDatabaseUrl, pingDatabase } from '@stylora/db'
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 
 const app = new Hono()
 const db = createAppDb()
+const trustedOrigins = new Set(getBetterAuthTrustedOrigins())
+
+app.use(
+  '/api/auth/*',
+  cors({
+    origin: (origin) => {
+      if (!origin) {
+        return null
+      }
+
+      return trustedOrigins.has(origin) ? origin : null
+    },
+    allowHeaders: ['Content-Type', 'Authorization'],
+    allowMethods: ['GET', 'POST', 'OPTIONS'],
+    exposeHeaders: ['Content-Length'],
+    credentials: true,
+    maxAge: 600,
+  }),
+)
 
 app.on(['GET', 'POST'], '/api/auth/*', (c) => {
   return auth.handler(c.req.raw)

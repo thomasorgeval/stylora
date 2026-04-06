@@ -50,10 +50,10 @@ importers:
     dependencies:
       '@astrojs/starlight':
         specifier: ^0.38.2
-        version: 0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
+        version: 0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
       '@astrojs/starlight-tailwind':
         specifier: ^5.0.0
-        version: 5.0.0(@astrojs/starlight@0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)))(tailwindcss@4.2.2)
+        version: 5.0.0(@astrojs/starlight@0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)))(tailwindcss@4.2.2)
       '@fontsource-variable/instrument-sans':
         specifier: ^5.2.8
         version: 5.2.8
@@ -62,7 +62,7 @@ importers:
         version: 5.2.10
       astro:
         specifier: ^6.1.3
-        version: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
+        version: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -72,7 +72,7 @@ importers:
         version: 0.9.8(prettier@3.8.1)(typescript@5.9.2)
       '@tailwindcss/vite':
         specifier: ^4.2.2
-        version: 4.2.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+        version: 4.2.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
@@ -93,23 +93,41 @@ importers:
         version: 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
       '@angular/forms':
         specifier: ^21.2.0
-        version: 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+        version: 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
       '@angular/platform-browser':
         specifier: ^21.2.0
-        version: 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+        version: 21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
       '@angular/router':
         specifier: ^21.2.0
-        version: 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+        version: 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@primeuix/themes':
+        specifier: ^2.0.3
+        version: 2.0.3
+      '@stylora/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      better-auth:
+        specifier: ^1.5.6
+        version: 1.5.6(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
+      ngx-better-auth:
+        specifier: ^0.10.3
+        version: 0.10.3(e41392b4b4c93c841c6305148556ac66)
+      primeng:
+        specifier: ^21.1.5
+        version: 21.1.5(fe402cba4df0b3166161eb6dc6664005)
       rxjs:
         specifier: ~7.8.0
         version: 7.8.2
+      tailwindcss-primeui:
+        specifier: ^0.6.1
+        version: 0.6.1(tailwindcss@4.2.2)
       tslib:
         specifier: ^2.3.0
         version: 2.8.1
     devDependencies:
       '@angular/build':
         specifier: ^21.2.6
-        version: 21.2.6(@angular/compiler-cli@21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3))(@angular/compiler@21.2.7)(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.2)(chokidar@5.0.0)(jiti@2.6.1)(lightningcss@1.32.0)(postcss@8.5.8)(tailwindcss@4.2.2)(tslib@2.8.1)(tsx@4.21.0)(typescript@5.9.3)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))(yaml@2.8.3)
+        version: 21.2.6(98a12a00a3e7c28ff8714c9aebf7694c)
       '@angular/cli':
         specifier: ^21.2.6
         version: 21.2.6(@types/node@25.5.2)(chokidar@5.0.0)
@@ -125,9 +143,6 @@ importers:
       postcss:
         specifier: ^8.5.3
         version: 8.5.8
-      prettier:
-        specifier: ^3.8.1
-        version: 3.8.1
       tailwindcss:
         specifier: ^4.1.12
         version: 4.2.2
@@ -136,7 +151,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4.0.8
-        version: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+        version: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
 
   packages/auth:
     dependencies:
@@ -148,14 +163,14 @@ importers:
         version: link:../db
       better-auth:
         specifier: ^1.5.6
-        version: 1.5.6(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
+        version: 1.5.6(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
       drizzle-orm:
         specifier: ^0.45.2
         version: 0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0)
     devDependencies:
       '@better-auth/cli':
         specifier: ^1.4.21
-        version: 1.4.21(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(drizzle-kit@0.31.10)(jose@6.2.2)(kysely@0.28.15)(magicast@0.5.2)(nanostores@1.2.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
+        version: 1.4.21(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(drizzle-kit@0.31.10)(jose@6.2.2)(kysely@0.28.15)(magicast@0.5.2)(nanostores@1.2.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
       '@types/node':
         specifier: ^25.5.2
         version: 25.5.2
@@ -167,7 +182,7 @@ importers:
         version: 6.0.2
       vitest:
         specifier: ^4.1.2
-        version: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+        version: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
 
   packages/contracts: {}
 
@@ -195,6 +210,61 @@ importers:
       typescript:
         specifier: ^6.0.2
         version: 6.0.2
+
+  packages/ui:
+    dependencies:
+      '@angular/common':
+        specifier: ^21.2.0
+        version: 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/compiler':
+        specifier: ^21.2.0
+        version: 21.2.7
+      '@angular/core':
+        specifier: ^21.2.0
+        version: 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
+      rxjs:
+        specifier: ~7.8.0
+        version: 7.8.2
+      tailwindcss-primeui:
+        specifier: ^0.6.1
+        version: 0.6.1(tailwindcss@4.2.2)
+      tslib:
+        specifier: ^2.3.0
+        version: 2.8.1
+    devDependencies:
+      '@angular/cli':
+        specifier: ^21.2.6
+        version: 21.2.6(@types/node@25.5.2)(chokidar@5.0.0)
+      '@angular/compiler-cli':
+        specifier: ^21.2.0
+        version: 21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3)
+      '@primeuix/themes':
+        specifier: ^2.0.3
+        version: 2.0.3
+      '@tailwindcss/postcss':
+        specifier: ^4.1.12
+        version: 4.2.2
+      jsdom:
+        specifier: ^28.0.0
+        version: 28.1.0(@noble/hashes@2.0.1)
+      ng-packagr:
+        specifier: ^21.2.2
+        version: 21.2.2(@angular/compiler-cli@21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3))(tailwindcss@4.2.2)(tslib@2.8.1)(typescript@5.9.3)
+      postcss:
+        specifier: ^8.5.3
+        version: 8.5.8
+      primeng:
+        specifier: ^21.1.5
+        version: 21.1.5(fe402cba4df0b3166161eb6dc6664005)
+      tailwindcss:
+        specifier: ^4.1.12
+        version: 4.2.2
+      typescript:
+        specifier: ~5.9.2
+        version: 5.9.3
+      vitest:
+        specifier: ^4.0.8
+        version: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
 
 packages:
 
@@ -283,6 +353,12 @@ packages:
     resolution: {integrity: sha512-hk2duJlPJyiMaI9MVWA5XpmlpD9C4n8qgquV/MJ7/n+ZRSwW3w1ndL5qUmA1ki+4Da54v/Rc8Wt5tUS955+93w==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
 
+  '@angular/animations@21.2.7':
+    resolution: {integrity: sha512-h8tUjQVSWfi2fohzxXeDDTjCfWABioYlPMrV1j98wCcFJad3FSnKCY0/gq8B4X6V81NGV29nEnhPyV0GinUBpQ==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+    peerDependencies:
+      '@angular/core': 21.2.7
+
   '@angular/build@21.2.6':
     resolution: {integrity: sha512-PJltYl9/INfz8nZ/KHf39nqlmt3c9PR0jJaZt6hhCPENyAf4PwQpm28erkJmbOYO864goIuws41lduYXyDqQ0Q==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -328,6 +404,14 @@ packages:
         optional: true
       vitest:
         optional: true
+
+  '@angular/cdk@21.2.5':
+    resolution: {integrity: sha512-F1sVqMAGYoiJNYYaR2cerqTo7IqpxQ3ZtMDxR3rtB0rSSd5UPOIQoqpsfSd6uH8FVnuzKaBII8Mg6YrjClFsng==}
+    peerDependencies:
+      '@angular/common': ^21.0.0 || ^22.0.0
+      '@angular/core': ^21.0.0 || ^22.0.0
+      '@angular/platform-browser': ^21.0.0 || ^22.0.0
+      rxjs: ^6.5.3 || ^7.4.0
 
   '@angular/cli@21.2.6':
     resolution: {integrity: sha512-I5DOFcIT1HKymyy2f78fjgD0Iv6jG46GbBZ/VxejcnhjubFpuN4CwPdugXf9rIDs8KZQqBzDBFUbq11vnk8h0A==}
@@ -2242,6 +2326,24 @@ packages:
     resolution: {integrity: sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==}
     engines: {node: '>= 10.0.0'}
 
+  '@primeuix/motion@0.0.10':
+    resolution: {integrity: sha512-PsZwOPq79Scp7/ionshRcQ5xKVf9+zuLcyY5mf6onK8chHT5C9JGphmcIZ4CzcqxuGEpsm8AIbTGy+zS3RtzLA==}
+    engines: {node: '>=12.11.0'}
+
+  '@primeuix/styled@0.7.4':
+    resolution: {integrity: sha512-QSO/NpOQg8e9BONWRBx9y8VGMCMYz0J/uKfNJEya/RGEu7ARx0oYW0ugI1N3/KB1AAvyGxzKBzGImbwg0KUiOQ==}
+    engines: {node: '>=12.11.0'}
+
+  '@primeuix/styles@2.0.3':
+    resolution: {integrity: sha512-2ykAB6BaHzR/6TwF8ShpJTsZrid6cVIEBVlookSdvOdmlWuevGu5vWOScgIwqWwlZcvkFYAGR/SUV3OHCTBMdw==}
+
+  '@primeuix/themes@2.0.3':
+    resolution: {integrity: sha512-3fS1883mtCWhgUgNf/feiaaDSOND4EBIOu9tZnzJlJ8QtYyL6eFLcA6V3ymCWqLVXQ1+lTVEZv1gl47FIdXReg==}
+
+  '@primeuix/utils@0.6.4':
+    resolution: {integrity: sha512-pZ5f+vj7wSzRhC7KoEQRU5fvYAe+RP9+m39CTscZ3UywCD1Y2o6Fe1rRgklMPSkzUcty2jzkA0zMYkiJBD1hgg==}
+    engines: {node: '>=12.11.0'}
+
   '@prisma/client@5.22.0':
     resolution: {integrity: sha512-M0SVXfyHnQREBKxCgyo7sffrKttwE6R8PMq330MIUF0pTwjUhLbW84pFDlf06B27XyCR++VtjugEnIHdr07SVA==}
     engines: {node: '>=16.13'}
@@ -2334,6 +2436,15 @@ packages:
 
   '@rolldown/pluginutils@1.0.0-rc.4':
     resolution: {integrity: sha512-1BrrmTu0TWfOP1riA8uakjFc9bpIUGzVKETsOtzY39pPga8zELGDl8eu1Dx7/gjM5CAz14UknsUMpBO8L+YntQ==}
+
+  '@rollup/plugin-json@6.1.0':
+    resolution: {integrity: sha512-EGI2te5ENk1coGeADSIwZ7G2Q8CJS2sF120T7jLw4xFw9n7wIOXHo+kIYRAoVpJAN+kmqZSoO3Fp4JtoNF4ReA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -2481,6 +2592,11 @@ packages:
     resolution: {integrity: sha512-lWMnixq/QzxyhTV6NjQJ4SFo1J6PvOX8vUx5Wb4bBPsEb+8xZ89Bz6kOXpfXj9ak9AHTQVQzlgzBEc1SyM27xQ==}
     cpu: [x64]
     os: [win32]
+
+  '@rollup/wasm-node@4.60.1':
+    resolution: {integrity: sha512-FAfGj5Ferzyna11iUwGdkYus/Y9d/H75PEpsseP5DZOsEsyPvP/Q7mJiSXhUYSEmyfHPaZyC8EsJCjqzDbtcfg==}
+    engines: {node: '>=18.0.0', npm: '>=8.0.0'}
+    hasBin: true
 
   '@schematics/angular@21.2.6':
     resolution: {integrity: sha512-KpLD8R2S762jbLdNEepE+b7KjhVOKPFHHdgNqhPv0NiGLdsvXSOx1e63JvFacoCZdmP7n3/gwmyT/utcVvnsag==}
@@ -2865,6 +2981,10 @@ packages:
   algoliasearch@5.48.1:
     resolution: {integrity: sha512-Rf7xmeuIo7nb6S4mp4abW2faW8DauZyE2faBIKFaUfP3wnpOvNSbiI5AwVhqBNj0jPgBWEvhyCu0sLjN2q77Rg==}
     engines: {node: '>= 14.0.0'}
+
+  ansi-colors@4.1.3:
+    resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
+    engines: {node: '>=6'}
 
   ansi-escapes@7.3.0:
     resolution: {integrity: sha512-BvU8nYgGQBxcmMuEeUEmNTvrMVjJNSH7RgW24vXexN4Ven6qCvy4TntnvlnwnMLTVlcRQQdbRY8NKnaIoeWDNg==}
@@ -3264,6 +3384,9 @@ packages:
     resolution: {integrity: sha512-dnN3ibLeoRf2HNC+OlCiNc5d2zxbLJXOtiZUudNFSXZrNSydxcCsSpRzXwfu7BBWCIfHPw+xTayeBvJCP/D8Ng==}
     engines: {node: '>= 18'}
 
+  common-path-prefix@3.0.0:
+    resolution: {integrity: sha512-QE33hToZseCH3jS0qN96O/bSh3kaw/h+Tq7ngyY9eWDUnTlTNUyqfqvCXioLe5Na5jFsL78ra/wuBU4iuEgd4w==}
+
   confbox@0.2.4:
     resolution: {integrity: sha512-ysOGlgTFbN2/Y6Cg3Iye8YKulHw+R2fNXHrgSmXISQdMnomY6eNDprVdW9R5xBguEqI954+S6709UyiO7B+6OQ==}
 
@@ -3295,6 +3418,10 @@ packages:
   cookie@1.1.1:
     resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
     engines: {node: '>=18'}
+
+  copy-anything@3.0.5:
+    resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
+    engines: {node: '>=12.13'}
 
   cors@2.8.6:
     resolution: {integrity: sha512-tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw==}
@@ -3390,6 +3517,10 @@ packages:
   depd@2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
+
+  dependency-graph@1.0.0:
+    resolution: {integrity: sha512-cW3gggJ28HZ/LExwxP2B++aiKxhJXMSIt9K48FOXQkm+vuG5gyatXnLsONRJdzO/7VfjDIiaOOa/bs4l464Lwg==}
+    engines: {node: '>=4'}
 
   dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
@@ -3678,6 +3809,10 @@ packages:
   err-code@2.0.3:
     resolution: {integrity: sha512-2bmlRpNKBxT/CRmPOlyISQpNj+qSeYvcym/uT0Jx2bMOlKLtSy1ZmLuVxSEKKyor/N5yhvp/ZiG1oE3DEYMSFA==}
 
+  errno@0.1.8:
+    resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
+    hasBin: true
+
   es-define-property@1.0.1:
     resolution: {integrity: sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==}
     engines: {node: '>= 0.4'}
@@ -3829,6 +3964,14 @@ packages:
   finalhandler@2.1.1:
     resolution: {integrity: sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==}
     engines: {node: '>= 18.0.0'}
+
+  find-cache-directory@6.0.0:
+    resolution: {integrity: sha512-CvFd5ivA6HcSHbD+59P7CyzINHXzwhuQK8RY7CxJZtgDSAtRlHiCaQpZQ2lMR/WRyUIEmzUvL6G2AGurMfegZA==}
+    engines: {node: '>=20'}
+
+  find-up-simple@1.0.1:
+    resolution: {integrity: sha512-afd4O7zpqHeRyg4PfDQsXmlDe2PfdHtJt6Akt8jOWaApLOZk5JXs6VMR29lz03pRe9mpykrRCYIYxaJYcfpncQ==}
+    engines: {node: '>=18'}
 
   flattie@1.1.1:
     resolution: {integrity: sha512-9UbaD6XdAL97+k/n+N7JwX46K/M6Zc6KcFYskrYL8wbBV/Uyk0CTAMY0VT+qiK5PM7AIc9aTWYtq65U7T+aCNQ==}
@@ -4029,6 +4172,10 @@ packages:
   i18next@23.16.8:
     resolution: {integrity: sha512-06r/TitrM88Mg5FdUXAKL96dJMzgqLE5dv3ryBAra4KCwD9mJ4ndOTS95ZuymIGoE+2hzfdaMak2X11/es7ZWg==}
 
+  iconv-lite@0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+    engines: {node: '>=0.10.0'}
+
   iconv-lite@0.7.2:
     resolution: {integrity: sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw==}
     engines: {node: '>=0.10.0'}
@@ -4039,6 +4186,11 @@ packages:
   ignore-walk@8.0.0:
     resolution: {integrity: sha512-FCeMZT4NiRQGh+YkeKMtWrOmBgWjHjMJ26WQWrRQyoyzqevdaGSakUaJW5xQYmjLlUVk2qUnCjYVBax9EKKg8A==}
     engines: {node: ^20.17.0 || >=22.9.0}
+
+  image-size@0.5.5:
+    resolution: {integrity: sha512-6TDAlDPZxUFCv+fuOkIoXT/V/f3Qbq8e37p+YOiYrUv3v9cc3/6x78VdfPgFVaB9dZYeLUfKgHRebpkm/oP2VQ==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
 
   immutable@5.1.5:
     resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
@@ -4052,6 +4204,9 @@ packages:
   ini@6.0.0:
     resolution: {integrity: sha512-IBTdIkzZNOpqm7q3dRqJvMaldXjDHWkEDfrwGEQTs5eaQMWV+djAhR+wahyNNMAa+qpbDUhBMVt4ZKNwpPm7xQ==}
     engines: {node: ^20.17.0 || >=22.9.0}
+
+  injection-js@2.6.1:
+    resolution: {integrity: sha512-dbR5bdhi7TWDoCye9cByZqeg/gAfamm8Vu3G1KZOTYkOif8WkuM8CD0oeDPtZYMzT5YH76JAFB7bkmyY9OJi2A==}
 
   inline-style-parser@0.2.7:
     resolution: {integrity: sha512-Nb2ctOyNR8DqQoR0OwRG95uNWIC0C1lCgf5Naz5H6Ji72KZ8OcFZLz2P5sNgwlyoJ8Yif11oMuYs5pBQa86csA==}
@@ -4122,6 +4277,10 @@ packages:
   is-unicode-supported@2.1.0:
     resolution: {integrity: sha512-mE00Gnza5EEB3Ds0HfMyllZzbBrmLOX3vfWoj9A9PEnTfratQ/BcaJOuMhnkhjXvb2+FkY3VuHqtAGpTPmglFQ==}
     engines: {node: '>=18'}
+
+  is-what@4.1.16:
+    resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
+    engines: {node: '>=12.13'}
 
   is-wsl@3.1.1:
     resolution: {integrity: sha512-e6rvdUCiQCAuumZslxRJWR/Doq4VpPR82kqclvcS0efgt430SlGIk05vdCN58+VrzgtIcfNODjozVielycD4Sw==}
@@ -4210,6 +4369,11 @@ packages:
   kysely@0.28.15:
     resolution: {integrity: sha512-r2clcf7HLWvDXaVUEvQymXJY4i3bSOIV3xsL/Upy3ZfSv5HeKsk9tsqbBptLvth5qHEIhxeHTA2jNLyQABkLBA==}
     engines: {node: '>=20.0.0'}
+
+  less@4.6.4:
+    resolution: {integrity: sha512-OJmO5+HxZLLw0RLzkqaNHzcgEAQG7C0y3aMbwtCzIUFZsLMNNq/1IdAdHEycQ58CwUO3jPTHmoN+tE5I7FQxNg==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   lightningcss-android-arm64@1.32.0:
     resolution: {integrity: sha512-YK7/ClTt4kAK0vo6w3X+Pnm0D2cf2vPHbhOXdoNti1Ga0al1P4TBZhwjATvjNwLEBCnKvjJc2jQgHXH0NEwlAg==}
@@ -4328,6 +4492,10 @@ packages:
 
   magicast@0.5.2:
     resolution: {integrity: sha512-E3ZJh4J3S9KfwdjZhe2afj6R9lGIN5Pher1pF39UGrXRqq/VDaGVIGN13BjHd2u8B61hArAGOnso7nBOouW3TQ==}
+
+  make-dir@2.1.0:
+    resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
+    engines: {node: '>=6'}
 
   make-fetch-happen@15.0.5:
     resolution: {integrity: sha512-uCbIa8jWWmQZt4dSnEStkVC6gdakiinAm4PiGsywIkguF0eWMdcjDz0ECYhUolFU3pFLOev9VNPCEygydXnddg==}
@@ -4528,6 +4696,11 @@ packages:
     resolution: {integrity: sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==}
     engines: {node: '>=18'}
 
+  mime@1.6.0:
+    resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
+    engines: {node: '>=4'}
+    hasBin: true
+
   mimic-function@5.0.1:
     resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
     engines: {node: '>=18'}
@@ -4611,6 +4784,11 @@ packages:
   napi-build-utils@2.0.0:
     resolution: {integrity: sha512-GEbrYkbfF7MoNaoh2iGG84Mnf/WZfB0GdGEsM8wz7Expx/LlWf5U8t9nvJKXSp3qr5IsEbK04cBGhol/KwOsWA==}
 
+  needle@3.5.0:
+    resolution: {integrity: sha512-jaQyPKKk2YokHrEg+vFDYxXIHTCBgiZwSHOoVx/8V3GIBS8/VN6NdVRmg8q1ERtPkMvmOvebsgga4sAj5hls/w==}
+    engines: {node: '>= 4.4.x'}
+    hasBin: true
+
   negotiator@1.0.0:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
@@ -4618,6 +4796,29 @@ packages:
   neotraverse@0.6.18:
     resolution: {integrity: sha512-Z4SmBUweYa09+o6pG+eASabEpP6QkQ70yHj351pQoEXIs8uHbaU2DWVmzBANKgflPa47A50PtB2+NgRpQvr7vA==}
     engines: {node: '>= 10'}
+
+  ng-packagr@21.2.2:
+    resolution: {integrity: sha512-VO0y7RU3Ik8E14QdrryVyVbTAyqO2MK9W9GrG4e/4N8+ti+DWiBSQmw0tIhnV67lEjQwCccPA3ZBoIn3B1vJ1Q==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+    hasBin: true
+    peerDependencies:
+      '@angular/compiler-cli': ^21.0.0 || ^21.2.0-next
+      tailwindcss: ^2.0.0 || ^3.0.0 || ^4.0.0
+      tslib: ^2.3.0
+      typescript: '>=5.9 <6.0'
+    peerDependenciesMeta:
+      tailwindcss:
+        optional: true
+
+  ngx-better-auth@0.10.3:
+    resolution: {integrity: sha512-Sr315vwKpjThWNYPOmiR5Sro7J6KavWvzT0hbZq8jY/PEwcW7QM7Ls1RLIP2Guvh/ArdIDCGICub8P9GhxIOew==}
+    peerDependencies:
+      '@angular/common': '>=20.0.0'
+      '@angular/core': '>=20.0.0'
+      '@angular/forms': '>=20.0.0'
+      '@angular/router': '>=20.0.0'
+      better-auth: '>=1.3.7'
+      rxjs: '>=7.8.0'
 
   nlcst-to-string@4.0.0:
     resolution: {integrity: sha512-YKLBCcUYKAg0FNlOBT6aI91qFmSiFKiluk655WzPF+DDMA02qIyy8uiRqI8QXtcFpEvll12LpL5MXqEmAZ+dcA==}
@@ -4769,6 +4970,10 @@ packages:
   parse-latin@7.0.0:
     resolution: {integrity: sha512-mhHgobPPua5kZ98EF4HWiH167JWBfl4pvAIXXdbaVohtK7a6YBOy56kvhCqduqyo/f3yrHFWmqmiMg/BkBkYYQ==}
 
+  parse-node-version@1.0.1:
+    resolution: {integrity: sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==}
+    engines: {node: '>= 0.10'}
+
   parse5-html-rewriting-stream@8.0.0:
     resolution: {integrity: sha512-wzh11mj8KKkno1pZEu+l2EVeWsuKDfR5KNWZOTsslfUX8lPDZx77m9T0kIoAVkFtD1nx6YF8oh4BnPHvxMtNMw==}
 
@@ -4853,6 +5058,10 @@ packages:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
+  pify@4.0.1:
+    resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
+    engines: {node: '>=6'}
+
   piscina@5.1.4:
     resolution: {integrity: sha512-7uU4ZnKeQq22t9AsmHGD2w4OYQGonwFnTypDypaWi7Qr2EvQIFVtG8J5D/3bE7W123Wdc9+v4CZDu5hJXVCtBg==}
     engines: {node: '>=20.x'}
@@ -4860,6 +5069,10 @@ packages:
   pkce-challenge@5.0.1:
     resolution: {integrity: sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==}
     engines: {node: '>=16.20.0'}
+
+  pkg-dir@8.0.0:
+    resolution: {integrity: sha512-4peoBq4Wks0riS0z8741NVv+/8IiTvqnZAr8QGgtdifrtpdXbNw/FxRS1l6NFqm4EMzuS0EDqNNx4XGaz8cuyQ==}
+    engines: {node: '>=18'}
 
   pkg-types@2.3.0:
     resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
@@ -4914,6 +5127,17 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  primeng@21.1.5:
+    resolution: {integrity: sha512-7SMGu/9C9g/0Y4mD0qHcrm0zexDY6ztjuZgzy+V60oEqOJ9X3mQwyfZfqm1x4WFH6QBECFfBafpVwVa9oIN8YQ==}
+    peerDependencies:
+      '@angular/cdk': ^21.0.0
+      '@angular/common': ^21.0.0
+      '@angular/core': ^21.0.7
+      '@angular/forms': ^21.0.0
+      '@angular/platform-browser': ^21.0.0
+      '@angular/router': ^21.0.0
+      rxjs: ^6.0.0 || ^7.8.1
+
   prismjs@1.30.0:
     resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
     engines: {node: '>=6'}
@@ -4936,6 +5160,9 @@ packages:
   proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
+
+  prr@1.0.1:
+    resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
 
   pump@3.0.4:
     resolution: {integrity: sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==}
@@ -5095,6 +5322,13 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
+  rollup-plugin-dts@6.4.1:
+    resolution: {integrity: sha512-l//F3Zf7ID5GoOfLfD8kroBjQKEKpy1qfhtAdnpibFZMffPaylrg1CoDC2vGkPeTeyxUe4bVFCln2EFuL7IGGg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      rollup: ^3.29.4 || ^4
+      typescript: ^4.5 || ^5.0 || ^6.0
+
   rollup@4.60.1:
     resolution: {integrity: sha512-VmtB2rFU/GroZ4oL8+ZqXgSA38O6GR8KSIvWmEFv63pQ0G6KaBH9s07PO8XTXP4vI+3UJUEypOfjkGfmSBBR0w==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -5132,6 +5366,10 @@ packages:
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
+
+  semver@5.7.2:
+    resolution: {integrity: sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==}
+    hasBin: true
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
@@ -5342,6 +5580,11 @@ packages:
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
+
+  tailwindcss-primeui@0.6.1:
+    resolution: {integrity: sha512-T69Rylcrmnt8zy9ik+qZvsLuRIrS9/k6rYJSIgZ1trnbEzGDDQSCIdmfyZknevqiHwpSJHSmQ9XT2C+S/hJY4A==}
+    peerDependencies:
+      tailwindcss: '>=3.1.0'
 
   tailwindcss@4.2.2:
     resolution: {integrity: sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==}
@@ -6063,7 +6306,13 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@angular/build@21.2.6(@angular/compiler-cli@21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3))(@angular/compiler@21.2.7)(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/node@25.5.2)(chokidar@5.0.0)(jiti@2.6.1)(lightningcss@1.32.0)(postcss@8.5.8)(tailwindcss@4.2.2)(tslib@2.8.1)(tsx@4.21.0)(typescript@5.9.3)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))(yaml@2.8.3)':
+  '@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))':
+    dependencies:
+      '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
+      tslib: 2.8.1
+    optional: true
+
+  '@angular/build@21.2.6(98a12a00a3e7c28ff8714c9aebf7694c)':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@angular-devkit/architect': 0.2102.6(chokidar@5.0.0)
@@ -6073,7 +6322,7 @@ snapshots:
       '@babel/helper-annotate-as-pure': 7.27.3
       '@babel/helper-split-export-declaration': 7.24.7
       '@inquirer/confirm': 5.1.21(@types/node@25.5.2)
-      '@vitejs/plugin-basic-ssl': 2.1.4(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+      '@vitejs/plugin-basic-ssl': 2.1.4(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
       beasties: 0.4.1
       browserslist: 4.28.2
       esbuild: 0.27.3
@@ -6094,15 +6343,17 @@ snapshots:
       tslib: 2.8.1
       typescript: 5.9.3
       undici: 7.24.4
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
       watchpack: 2.5.1
     optionalDependencies:
       '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
-      '@angular/platform-browser': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+      '@angular/platform-browser': 21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+      less: 4.6.4
       lmdb: 3.5.1
+      ng-packagr: 21.2.2(@angular/compiler-cli@21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3))(tailwindcss@4.2.2)(tslib@2.8.1)(typescript@5.9.3)
       postcss: 8.5.8
       tailwindcss: 4.2.2
-      vitest: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+      vitest: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
@@ -6117,6 +6368,15 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  '@angular/cdk@21.2.5(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)':
+    dependencies:
+      '@angular/common': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
+      '@angular/platform-browser': 21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+      parse5: 8.0.0
+      rxjs: 7.8.2
+      tslib: 2.8.1
 
   '@angular/cli@21.2.6(@types/node@25.5.2)(chokidar@5.0.0)':
     dependencies:
@@ -6177,26 +6437,28 @@ snapshots:
     optionalDependencies:
       '@angular/compiler': 21.2.7
 
-  '@angular/forms@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)':
+  '@angular/forms@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)':
     dependencies:
       '@angular/common': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
-      '@angular/platform-browser': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+      '@angular/platform-browser': 21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
       '@standard-schema/spec': 1.1.0
       rxjs: 7.8.2
       tslib: 2.8.1
 
-  '@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))':
+  '@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))':
     dependencies:
       '@angular/common': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
       tslib: 2.8.1
+    optionalDependencies:
+      '@angular/animations': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
 
-  '@angular/router@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)':
+  '@angular/router@21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)':
     dependencies:
       '@angular/common': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
-      '@angular/platform-browser': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+      '@angular/platform-browser': 21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
       rxjs: 7.8.2
       tslib: 2.8.1
 
@@ -6288,12 +6550,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@5.0.3(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))':
+  '@astrojs/mdx@5.0.3(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))':
     dependencies:
       '@astrojs/markdown-remark': 7.1.0
       '@mdx-js/mdx': 3.1.1
       acorn: 8.16.0
-      astro: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
+      astro: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
       es-module-lexer: 2.0.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -6317,22 +6579,22 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.3.6
 
-  '@astrojs/starlight-tailwind@5.0.0(@astrojs/starlight@0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)))(tailwindcss@4.2.2)':
+  '@astrojs/starlight-tailwind@5.0.0(@astrojs/starlight@0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)))(tailwindcss@4.2.2)':
     dependencies:
-      '@astrojs/starlight': 0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
+      '@astrojs/starlight': 0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
       tailwindcss: 4.2.2
 
-  '@astrojs/starlight@0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))':
+  '@astrojs/starlight@0.38.2(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))':
     dependencies:
       '@astrojs/markdown-remark': 7.1.0
-      '@astrojs/mdx': 5.0.3(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
+      '@astrojs/mdx': 5.0.3(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
       '@astrojs/sitemap': 3.7.2
       '@pagefind/default-ui': 1.4.0
       '@types/hast': 3.0.4
       '@types/js-yaml': 4.0.9
       '@types/mdast': 4.0.4
-      astro: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
-      astro-expressive-code: 0.41.7(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
+      astro: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
+      astro-expressive-code: 0.41.7(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -6605,7 +6867,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@better-auth/cli@1.4.21(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(drizzle-kit@0.31.10)(jose@6.2.2)(kysely@0.28.15)(magicast@0.5.2)(nanostores@1.2.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))':
+  '@better-auth/cli@1.4.21(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(drizzle-kit@0.31.10)(jose@6.2.2)(kysely@0.28.15)(magicast@0.5.2)(nanostores@1.2.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/preset-react': 7.28.5(@babel/core@7.29.0)
@@ -6617,7 +6879,7 @@ snapshots:
       '@mrleebo/prisma-ast': 0.13.1
       '@prisma/client': 5.22.0
       '@types/pg': 8.20.0
-      better-auth: 1.4.21(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
+      better-auth: 1.4.21(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
       better-sqlite3: 12.8.0
       c12: 3.3.4(magicast@0.5.2)
       chalk: 5.6.2
@@ -6721,26 +6983,33 @@ snapshots:
     optionalDependencies:
       drizzle-orm: 0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0)
 
-  '@better-auth/kysely-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(kysely@0.28.15)':
+  '@better-auth/drizzle-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))':
     dependencies:
-      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
+      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
+      '@better-auth/utils': 0.3.1
+    optionalDependencies:
+      drizzle-orm: 0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0)
+
+  '@better-auth/kysely-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(kysely@0.28.15)':
+    dependencies:
+      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
       '@better-auth/utils': 0.3.1
     optionalDependencies:
       kysely: 0.28.15
 
-  '@better-auth/memory-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)':
+  '@better-auth/memory-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)':
     dependencies:
-      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
+      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
       '@better-auth/utils': 0.3.1
 
-  '@better-auth/mongo-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)':
+  '@better-auth/mongo-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)':
     dependencies:
-      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
+      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
       '@better-auth/utils': 0.3.1
 
-  '@better-auth/prisma-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(@prisma/client@5.22.0)':
+  '@better-auth/prisma-adapter@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(@prisma/client@5.22.0)':
     dependencies:
-      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
+      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
       '@better-auth/utils': 0.3.1
     optionalDependencies:
       '@prisma/client': 5.22.0
@@ -6751,9 +7020,9 @@ snapshots:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.21
 
-  '@better-auth/telemetry@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))':
+  '@better-auth/telemetry@1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))':
     dependencies:
-      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
+      '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
       '@better-auth/utils': 0.3.1
       '@better-fetch/fetch': 1.1.21
 
@@ -7843,6 +8112,24 @@ snapshots:
       '@parcel/watcher-win32-x64': 2.5.6
     optional: true
 
+  '@primeuix/motion@0.0.10':
+    dependencies:
+      '@primeuix/utils': 0.6.4
+
+  '@primeuix/styled@0.7.4':
+    dependencies:
+      '@primeuix/utils': 0.6.4
+
+  '@primeuix/styles@2.0.3':
+    dependencies:
+      '@primeuix/styled': 0.7.4
+
+  '@primeuix/themes@2.0.3':
+    dependencies:
+      '@primeuix/styled': 0.7.4
+
+  '@primeuix/utils@0.6.4': {}
+
   '@prisma/client@5.22.0': {}
 
   '@rolldown/binding-android-arm64@1.0.0-rc.4':
@@ -7890,6 +8177,12 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.0.0-rc.4': {}
+
+  '@rollup/plugin-json@6.1.0(rollup@4.60.1)':
+    dependencies:
+      '@rollup/pluginutils': 5.3.0(rollup@4.60.1)
+    optionalDependencies:
+      rollup: 4.60.1
 
   '@rollup/pluginutils@5.3.0(rollup@4.60.1)':
     dependencies:
@@ -7973,6 +8266,12 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.60.1':
     optional: true
+
+  '@rollup/wasm-node@4.60.1':
+    dependencies:
+      '@types/estree': 1.0.8
+    optionalDependencies:
+      fsevents: 2.3.3
 
   '@schematics/angular@21.2.6(chokidar@5.0.0)':
     dependencies:
@@ -8156,12 +8455,12 @@ snapshots:
       postcss: 8.5.8
       tailwindcss: 4.2.2
 
-  '@tailwindcss/vite@4.2.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))':
+  '@tailwindcss/vite@4.2.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))':
     dependencies:
       '@tailwindcss/node': 4.2.2
       '@tailwindcss/oxide': 4.2.2
       tailwindcss: 4.2.2
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
 
   '@tufjs/canonical-json@2.0.0': {}
 
@@ -8256,9 +8555,9 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-basic-ssl@2.1.4(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))':
+  '@vitejs/plugin-basic-ssl@2.1.4(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))':
     dependencies:
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
 
   '@vitest/expect@4.1.2':
     dependencies:
@@ -8269,13 +8568,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))':
+  '@vitest/mocker@4.1.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))':
     dependencies:
       '@vitest/spy': 4.1.2
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
 
   '@vitest/pretty-format@4.1.2':
     dependencies:
@@ -8400,6 +8699,8 @@ snapshots:
       '@algolia/requester-fetch': 5.48.1
       '@algolia/requester-node-http': 5.48.1
 
+  ansi-colors@4.1.3: {}
+
   ansi-escapes@7.3.0:
     dependencies:
       environment: 1.1.0
@@ -8431,12 +8732,12 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.41.7(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)):
+  astro-expressive-code@0.41.7(astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)):
     dependencies:
-      astro: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
+      astro: 6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3)
       rehype-expressive-code: 0.41.7
 
-  astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3):
+  astro@6.1.3(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(rollup@4.60.1)(sass@1.97.3)(tsx@4.21.0)(typescript@5.9.2)(yaml@2.8.3):
     dependencies:
       '@astrojs/compiler': 3.0.1
       '@astrojs/internal-helpers': 0.8.0
@@ -8488,8 +8789,8 @@ snapshots:
       unist-util-visit: 5.1.0
       unstorage: 1.17.5
       vfile: 6.0.3
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
-      vitefu: 1.1.3(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vitefu: 1.1.3(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.3.6
@@ -8560,7 +8861,7 @@ snapshots:
       postcss-media-query-parser: 0.2.3
       postcss-safe-parser: 7.0.1(postcss@8.5.8)
 
-  better-auth@1.4.21(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))):
+  better-auth@1.4.21(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.41.0(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))):
     dependencies:
       '@better-auth/core': 1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
       '@better-auth/telemetry': 1.4.21(@better-auth/core@1.4.21(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))
@@ -8580,17 +8881,17 @@ snapshots:
       drizzle-kit: 0.31.10
       drizzle-orm: 0.41.0(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0)
       pg: 8.20.0
-      vitest: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+      vitest: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
 
-  better-auth@1.5.6(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))):
+  better-auth@1.5.6(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))):
     dependencies:
       '@better-auth/core': 1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0)
-      '@better-auth/drizzle-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))
-      '@better-auth/kysely-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(kysely@0.28.15)
-      '@better-auth/memory-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)
-      '@better-auth/mongo-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)
-      '@better-auth/prisma-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(@prisma/client@5.22.0)
-      '@better-auth/telemetry': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.1.8(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))
+      '@better-auth/drizzle-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))
+      '@better-auth/kysely-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(kysely@0.28.15)
+      '@better-auth/memory-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)
+      '@better-auth/mongo-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)
+      '@better-auth/prisma-adapter': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))(@better-auth/utils@0.3.1)(@prisma/client@5.22.0)
+      '@better-auth/telemetry': 1.5.6(@better-auth/core@1.5.6(@better-auth/utils@0.3.1)(@better-fetch/fetch@1.1.21)(@opentelemetry/api@1.9.1)(better-call@1.3.2(zod@4.3.6))(jose@6.2.2)(kysely@0.28.15)(nanostores@1.2.0))
       '@better-auth/utils': 0.3.1
       '@better-fetch/fetch': 1.1.21
       '@noble/ciphers': 2.1.1
@@ -8607,7 +8908,7 @@ snapshots:
       drizzle-kit: 0.31.10
       drizzle-orm: 0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0)
       pg: 8.20.0
-      vitest: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+      vitest: 4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
       - '@opentelemetry/api'
@@ -8818,6 +9119,8 @@ snapshots:
 
   common-ancestor-path@2.0.0: {}
 
+  common-path-prefix@3.0.0: {}
+
   confbox@0.2.4: {}
 
   content-disposition@1.0.1: {}
@@ -8835,6 +9138,10 @@ snapshots:
   cookie@0.7.2: {}
 
   cookie@1.1.1: {}
+
+  copy-anything@3.0.5:
+    dependencies:
+      is-what: 4.1.16
 
   cors@2.8.6:
     dependencies:
@@ -8931,6 +9238,8 @@ snapshots:
   defu@6.1.6: {}
 
   depd@2.0.0: {}
+
+  dependency-graph@1.0.0: {}
 
   dequal@2.0.3: {}
 
@@ -9038,6 +9347,11 @@ snapshots:
   environment@1.1.0: {}
 
   err-code@2.0.3: {}
+
+  errno@0.1.8:
+    dependencies:
+      prr: 1.0.1
+    optional: true
 
   es-define-property@1.0.1: {}
 
@@ -9311,6 +9625,13 @@ snapshots:
       statuses: 2.0.2
     transitivePeerDependencies:
       - supports-color
+
+  find-cache-directory@6.0.0:
+    dependencies:
+      common-path-prefix: 3.0.0
+      pkg-dir: 8.0.0
+
+  find-up-simple@1.0.1: {}
 
   flattie@1.1.1: {}
 
@@ -9645,6 +9966,11 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.29.2
 
+  iconv-lite@0.6.3:
+    dependencies:
+      safer-buffer: 2.1.2
+    optional: true
+
   iconv-lite@0.7.2:
     dependencies:
       safer-buffer: 2.1.2
@@ -9655,6 +9981,9 @@ snapshots:
     dependencies:
       minimatch: 10.2.5
 
+  image-size@0.5.5:
+    optional: true
+
   immutable@5.1.5: {}
 
   inherits@2.0.4: {}
@@ -9662,6 +9991,10 @@ snapshots:
   ini@1.3.8: {}
 
   ini@6.0.0: {}
+
+  injection-js@2.6.1:
+    dependencies:
+      tslib: 2.8.1
 
   inline-style-parser@0.2.7: {}
 
@@ -9711,6 +10044,8 @@ snapshots:
   is-promise@4.0.0: {}
 
   is-unicode-supported@2.1.0: {}
+
+  is-what@4.1.16: {}
 
   is-wsl@3.1.1:
     dependencies:
@@ -9792,6 +10127,19 @@ snapshots:
   klona@2.0.6: {}
 
   kysely@0.28.15: {}
+
+  less@4.6.4:
+    dependencies:
+      copy-anything: 3.0.5
+      parse-node-version: 1.0.1
+    optionalDependencies:
+      errno: 0.1.8
+      graceful-fs: 4.2.11
+      image-size: 0.5.5
+      make-dir: 2.1.0
+      mime: 1.6.0
+      needle: 3.5.0
+      source-map: 0.6.1
 
   lightningcss-android-arm64@1.32.0:
     optional: true
@@ -9912,6 +10260,12 @@ snapshots:
       '@babel/parser': 7.29.2
       '@babel/types': 7.29.0
       source-map-js: 1.2.1
+
+  make-dir@2.1.0:
+    dependencies:
+      pify: 4.0.1
+      semver: 5.7.2
+    optional: true
 
   make-fetch-happen@15.0.5:
     dependencies:
@@ -10407,6 +10761,9 @@ snapshots:
     dependencies:
       mime-db: 1.54.0
 
+  mime@1.6.0:
+    optional: true
+
   mimic-function@5.0.1: {}
 
   mimic-response@3.1.0: {}
@@ -10484,9 +10841,55 @@ snapshots:
 
   napi-build-utils@2.0.0: {}
 
+  needle@3.5.0:
+    dependencies:
+      iconv-lite: 0.6.3
+      sax: 1.6.0
+    optional: true
+
   negotiator@1.0.0: {}
 
   neotraverse@0.6.18: {}
+
+  ng-packagr@21.2.2(@angular/compiler-cli@21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3))(tailwindcss@4.2.2)(tslib@2.8.1)(typescript@5.9.3):
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@angular/compiler-cli': 21.2.7(@angular/compiler@21.2.7)(typescript@5.9.3)
+      '@rollup/plugin-json': 6.1.0(rollup@4.60.1)
+      '@rollup/wasm-node': 4.60.1
+      ajv: 8.18.0
+      ansi-colors: 4.1.3
+      browserslist: 4.28.2
+      chokidar: 5.0.0
+      commander: 14.0.3
+      dependency-graph: 1.0.0
+      esbuild: 0.27.7
+      find-cache-directory: 6.0.0
+      injection-js: 2.6.1
+      jsonc-parser: 3.3.1
+      less: 4.6.4
+      ora: 9.3.0
+      piscina: 5.1.4
+      postcss: 8.5.8
+      rollup-plugin-dts: 6.4.1(rollup@4.60.1)(typescript@5.9.3)
+      rxjs: 7.8.2
+      sass: 1.97.3
+      tinyglobby: 0.2.15
+      tslib: 2.8.1
+      typescript: 5.9.3
+    optionalDependencies:
+      rollup: 4.60.1
+      tailwindcss: 4.2.2
+
+  ngx-better-auth@0.10.3(e41392b4b4c93c841c6305148556ac66):
+    dependencies:
+      '@angular/common': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
+      '@angular/forms': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@angular/router': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+      better-auth: 1.5.6(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(better-sqlite3@12.8.0)(drizzle-kit@0.31.10)(drizzle-orm@0.45.2(@opentelemetry/api@1.9.1)(@prisma/client@5.22.0)(@types/pg@8.20.0)(better-sqlite3@12.8.0)(kysely@0.28.15)(pg@8.20.0))(pg@8.20.0)(vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)))
+      rxjs: 7.8.2
+      tslib: 2.8.1
 
   nlcst-to-string@4.0.0:
     dependencies:
@@ -10700,6 +11103,8 @@ snapshots:
       unist-util-visit-children: 3.0.0
       vfile: 6.0.3
 
+  parse-node-version@1.0.1: {}
+
   parse5-html-rewriting-stream@8.0.0:
     dependencies:
       entities: 6.0.1
@@ -10778,11 +11183,18 @@ snapshots:
 
   picomatch@4.0.4: {}
 
+  pify@4.0.1:
+    optional: true
+
   piscina@5.1.4:
     optionalDependencies:
       '@napi-rs/nice': 1.1.1
 
   pkce-challenge@5.0.1: {}
+
+  pkg-dir@8.0.0:
+    dependencies:
+      find-up-simple: 1.0.1
 
   pkg-types@2.3.0:
     dependencies:
@@ -10839,6 +11251,21 @@ snapshots:
 
   prettier@3.8.1: {}
 
+  primeng@21.1.5(fe402cba4df0b3166161eb6dc6664005):
+    dependencies:
+      '@angular/cdk': 21.2.5(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@angular/common': 21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@angular/core': 21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)
+      '@angular/forms': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@angular/platform-browser': 21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))
+      '@angular/router': 21.2.7(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(@angular/platform-browser@21.2.7(@angular/animations@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(@angular/common@21.2.7(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@21.2.7(@angular/compiler@21.2.7)(rxjs@7.8.2)))(rxjs@7.8.2)
+      '@primeuix/motion': 0.0.10
+      '@primeuix/styled': 0.7.4
+      '@primeuix/styles': 2.0.3
+      '@primeuix/utils': 0.6.4
+      rxjs: 7.8.2
+      tslib: 2.8.1
+
   prismjs@1.30.0: {}
 
   proc-log@6.1.0: {}
@@ -10859,6 +11286,9 @@ snapshots:
     dependencies:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
+
+  prr@1.0.1:
+    optional: true
 
   pump@3.0.4:
     dependencies:
@@ -11112,6 +11542,17 @@ snapshots:
       - '@emnapi/core'
       - '@emnapi/runtime'
 
+  rollup-plugin-dts@6.4.1(rollup@4.60.1)(typescript@5.9.3):
+    dependencies:
+      '@jridgewell/remapping': 2.3.5
+      '@jridgewell/sourcemap-codec': 1.5.5
+      convert-source-map: 2.0.0
+      magic-string: 0.30.21
+      rollup: 4.60.1
+      typescript: 5.9.3
+    optionalDependencies:
+      '@babel/code-frame': 7.29.0
+
   rollup@4.60.1:
     dependencies:
       '@types/estree': 1.0.8
@@ -11178,6 +11619,9 @@ snapshots:
   saxes@6.0.0:
     dependencies:
       xmlchars: 2.2.0
+
+  semver@5.7.2:
+    optional: true
 
   semver@6.3.1: {}
 
@@ -11456,6 +11900,10 @@ snapshots:
 
   symbol-tree@3.2.4: {}
 
+  tailwindcss-primeui@0.6.1(tailwindcss@4.2.2):
+    dependencies:
+      tailwindcss: 4.2.2
+
   tailwindcss@4.2.2: {}
 
   tapable@2.3.2: {}
@@ -11688,7 +12136,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3):
+  vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3):
     dependencies:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.4)
@@ -11700,19 +12148,20 @@ snapshots:
       '@types/node': 25.5.2
       fsevents: 2.3.3
       jiti: 2.6.1
+      less: 4.6.4
       lightningcss: 1.32.0
       sass: 1.97.3
       tsx: 4.21.0
       yaml: 2.8.3
 
-  vitefu@1.1.3(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)):
+  vitefu@1.1.3(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)):
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
 
-  vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)):
+  vitest@4.1.2(@opentelemetry/api@1.9.1)(@types/node@25.5.2)(jsdom@28.1.0(@noble/hashes@2.0.1))(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)):
     dependencies:
       '@vitest/expect': 4.1.2
-      '@vitest/mocker': 4.1.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
+      '@vitest/mocker': 4.1.2(vite@7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3))
       '@vitest/pretty-format': 4.1.2
       '@vitest/runner': 4.1.2
       '@vitest/snapshot': 4.1.2
@@ -11729,7 +12178,7 @@ snapshots:
       tinyexec: 1.0.4
       tinyglobby: 0.2.15
       tinyrainbow: 3.1.0
-      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
+      vite: 7.3.1(@types/node@25.5.2)(jiti@2.6.1)(less@4.6.4)(lightningcss@1.32.0)(sass@1.97.3)(tsx@4.21.0)(yaml@2.8.3)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
