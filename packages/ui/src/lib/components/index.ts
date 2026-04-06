@@ -1,1 +1,1 @@
-export * from './stylora-button.component'
+export * from './button.component'

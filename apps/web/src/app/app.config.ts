@@ -18,6 +18,9 @@ export const appConfig: ApplicationConfig = {
     providePrimeNG({
       theme: {
         preset: StyloraPreset,
+        options: {
+          darkModeSelector: false,
+        },
       },
     }),
   ],

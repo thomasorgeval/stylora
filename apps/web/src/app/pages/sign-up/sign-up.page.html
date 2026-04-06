@@ -1,45 +1,120 @@
-<main class="auth-page">
-  <section class="auth-card">
-    <p class="auth-eyebrow">Stylora access</p>
-    <h1>Create your account</h1>
-    <p class="auth-copy">Start with your personal organization and connect your first PostgreSQL project.</p>
+<main class="min-h-screen bg-stone-100 px-4 py-6 text-stone-950 sm:px-6 lg:px-8">
+  <section class="mx-auto grid min-h-[calc(100vh-3rem)] max-w-6xl gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(24rem,0.95fr)]">
+    <section class="flex flex-col justify-between rounded-4xl border border-stone-200 bg-stone-50 p-6 sm:p-8 lg:p-10 shadow-(--p-card-shadow)">
+      <div class="space-y-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Stylora workspace</p>
 
-    <form class="auth-form" (ngSubmit)="signUp()">
-      <div class="auth-field">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" [(ngModel)]="name" autocomplete="name" required />
+        <div class="space-y-4">
+          <h1 class="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl">
+            Create a serious home for your database projects.
+          </h1>
+
+          <p class="max-w-lg text-base leading-7 text-stone-600">
+            A restrained, product-first experience that starts with your own organization and grows with your team.
+          </p>
+        </div>
       </div>
 
-      <div class="auth-field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" [(ngModel)]="email" autocomplete="email" required />
+      <div class="grid gap-3 pt-8 sm:grid-cols-3 lg:grid-cols-1">
+        <div class="rounded-2xl border border-stone-200 px-4 py-4 text-sm leading-6 text-stone-600">
+          Personal organization created automatically
+        </div>
+        <div class="rounded-2xl border border-stone-200 px-4 py-4 text-sm leading-6 text-stone-600">
+          Clear setup, no unnecessary onboarding maze
+        </div>
+        <div class="rounded-2xl border border-stone-200 px-4 py-4 text-sm leading-6 text-stone-600">
+          Built for day-to-day SQL work
+        </div>
       </div>
+    </section>
 
-      <div class="auth-field">
-        <label for="password">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          [(ngModel)]="password"
-          autocomplete="new-password"
-          minlength="8"
-          required
-        />
-      </div>
+    <section class="flex items-center">
+      <p-card class="w-full rounded-4xl border border-stone-200 bg-white shadow-sm">
+        <div class="space-y-6">
+          <div class="space-y-3">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Access</p>
+            <div class="space-y-2">
+              <h2 class="text-3xl font-semibold tracking-tight text-stone-950">Create your account</h2>
+              <p class="text-sm leading-6 text-stone-600">
+                Start with a personal workspace and invite others later.
+              </p>
+            </div>
+          </div>
 
-      @if (errorMessage()) {
-        <p class="auth-error">{{ errorMessage() }}</p>
-      }
+          <form class="space-y-5" (ngSubmit)="signUp()">
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-stone-700" for="name">Name</label>
+              <input
+                id="name"
+                pInputText
+                [fluid]="true"
+                name="name"
+                type="text"
+                [(ngModel)]="name"
+                autocomplete="name"
+                placeholder="Jane Doe"
+                required
+              />
+            </div>
 
-      <button class="auth-submit" type="submit" [disabled]="isSubmitting()">
-        {{ isSubmitting() ? 'Creating account...' : 'Create account' }}
-      </button>
-    </form>
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-stone-700" for="email">Email</label>
+              <input
+                id="email"
+                pInputText
+                [fluid]="true"
+                name="email"
+                type="email"
+                [(ngModel)]="email"
+                autocomplete="email"
+                placeholder="you@company.com"
+                required
+              />
+            </div>
 
-    <p class="auth-footer">
-      Already have an account?
-      <a routerLink="/sign-in">Sign in</a>
-    </p>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between gap-3">
+                <label class="text-sm font-medium text-stone-700" for="password">Password</label>
+                <span class="text-xs text-stone-500">Minimum 8 characters</span>
+              </div>
+
+              <p-password
+                inputId="password"
+                name="password"
+                [(ngModel)]="password"
+                autocomplete="new-password"
+                placeholder="Create a password"
+                [feedback]="false"
+                [toggleMask]="true"
+                [fluid]="true"
+                inputStyleClass="w-full"
+                styleClass="w-full"
+              />
+            </div>
+
+            @if (errorMessage()) {
+              <p-message severity="error" styleClass="w-full">
+                {{ errorMessage() }}
+              </p-message>
+            }
+
+            <p-button
+              type="submit"
+              [fluid]="true"
+              [disabled]="isSubmitting()"
+              [loading]="isSubmitting()"
+              [label]="isSubmitting() ? 'Creating account...' : 'Create account'"
+            />
+          </form>
+
+          <p class="text-sm text-stone-600">
+            Already have an account?
+            <a class="font-medium text-stone-950 underline decoration-stone-300 underline-offset-4" routerLink="/sign-in">
+              Sign in
+            </a>
+          </p>
+        </div>
+      </p-card>
+    </section>
   </section>
 </main>

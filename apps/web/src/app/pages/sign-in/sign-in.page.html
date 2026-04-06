@@ -1,0 +1,101 @@
+<main class="min-h-screen bg-stone-100 px-4 py-6 text-stone-950 sm:px-6 lg:px-8">
+  <section class="mx-auto grid min-h-[calc(100vh-3rem)] max-w-6xl gap-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(24rem,0.95fr)]">
+    <section class="flex flex-col justify-between rounded-4xl border border-stone-200 bg-stone-50 p-6 sm:p-8 lg:p-10 shadow-(--p-card-shadow)">
+      <div class="space-y-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Stylora workspace</p>
+
+        <div class="space-y-4">
+          <h1 class="max-w-xl text-4xl font-semibold tracking-tight text-stone-950 sm:text-5xl">
+            PostgreSQL work, with structure from day one.
+          </h1>
+
+          <p class="max-w-lg text-base leading-7 text-stone-600">
+            A credible browser workspace for teams who want projects, organizations, and a calmer place to work.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid gap-3 pt-8 sm:grid-cols-3 lg:grid-cols-1">
+        <div class="rounded-2xl border border-stone-200 px-4 py-4 text-sm leading-6 text-stone-600">
+          Organizations and projects ready from the start
+        </div>
+        <div class="rounded-2xl border border-stone-200 px-4 py-4 text-sm leading-6 text-stone-600">
+          Focused on PostgreSQL, without startup-style noise
+        </div>
+        <div class="rounded-2xl border border-stone-200 px-4 py-4 text-sm leading-6 text-stone-600">
+          Personal workspace first, team-ready next
+        </div>
+      </div>
+    </section>
+
+    <section class="flex items-center">
+      <p-card class="w-full rounded-4xl border border-stone-200 bg-white shadow-sm">
+        <div class="space-y-6">
+          <div class="space-y-3">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Access</p>
+            <div class="space-y-2">
+              <h2 class="text-3xl font-semibold tracking-tight text-stone-950">Open your workspace</h2>
+              <p class="text-sm leading-6 text-stone-600">
+                Continue where you left off in your PostgreSQL workspace.
+              </p>
+            </div>
+          </div>
+
+          <form class="space-y-5" (ngSubmit)="signIn()">
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-stone-700" for="email">Email</label>
+              <input
+                id="email"
+                pInputText
+                [fluid]="true"
+                name="email"
+                type="email"
+                [(ngModel)]="email"
+                autocomplete="email"
+                placeholder="you@company.com"
+                required
+              />
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-medium text-stone-700" for="password">Password</label>
+              <p-password
+                inputId="password"
+                name="password"
+                [(ngModel)]="password"
+                autocomplete="current-password"
+                placeholder="Your password"
+                [feedback]="false"
+                [toggleMask]="true"
+                [fluid]="true"
+                inputStyleClass="w-full"
+                styleClass="w-full"
+              />
+            </div>
+
+            @if (errorMessage()) {
+              <p-message severity="error" styleClass="w-full">
+                {{ errorMessage() }}
+              </p-message>
+            }
+
+            <p-button
+              type="submit"
+              [fluid]="true"
+              [disabled]="isSubmitting()"
+              [loading]="isSubmitting()"
+              [label]="isSubmitting() ? 'Opening workspace...' : 'Open workspace'"
+            />
+          </form>
+
+          <p class="text-sm text-stone-600">
+            New to Stylora?
+            <a class="font-medium text-stone-950 underline decoration-stone-300 underline-offset-4" routerLink="/sign-up">
+              Create account
+            </a>
+          </p>
+        </div>
+      </p-card>
+    </section>
+  </section>
+</main>

@@ -2,6 +2,11 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
+    "predev": "pnpm --filter @stylora/ui build",
+    "prestart": "pnpm --filter @stylora/ui build",
+    "prebuild": "pnpm --filter @stylora/ui build",
+    "prewatch": "pnpm --filter @stylora/ui build",
+    "pretest": "pnpm --filter @stylora/ui build",
     "ng": "ng",
     "dev": "ng serve --configuration local",
     "start": "ng serve --configuration local",

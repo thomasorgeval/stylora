@@ -3,6 +3,11 @@ import { Component, inject, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { Router, RouterLink } from '@angular/router'
 import { AuthService } from 'ngx-better-auth'
+import { ButtonModule } from 'primeng/button'
+import { CardModule } from 'primeng/card'
+import { InputTextModule } from 'primeng/inputtext'
+import { MessageModule } from 'primeng/message'
+import { PasswordModule } from 'primeng/password'
 import { firstValueFrom } from 'rxjs'
 
 function getErrorMessage(error: unknown) {
@@ -14,7 +19,16 @@ function getErrorMessage(error: unknown) {
 }
 
 @Component({
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterLink,
+    CardModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule,
+    MessageModule,
+  ],
   templateUrl: 'sign-in.page.html',
 })
 export class SignInPage {
