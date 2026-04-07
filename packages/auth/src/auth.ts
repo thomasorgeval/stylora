@@ -10,6 +10,7 @@ import {
   getBetterAuthTrustedOrigins,
   getBetterAuthUseSecureCookies,
 } from './env.js'
+import { accessControl, organizationRoles } from './permissions.js'
 import { buildPersonalOrganization } from './personal-organization.js'
 
 type CreatedUser = {
@@ -38,7 +39,12 @@ const authOptions = {
   emailAndPassword: {
     enabled: true,
   },
-  plugins: [organization()],
+  plugins: [
+    organization({
+      ac: accessControl,
+      roles: organizationRoles,
+    }),
+  ],
   databaseHooks: {
     user: {
       create: {

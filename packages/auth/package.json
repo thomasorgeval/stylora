@@ -13,11 +13,12 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "vitest run",
+    "test": "pnpm --filter @stylora/contracts build && vitest run",
     "generate": "pnpm exec better-auth generate --config src/auth.ts --output ../db/src/auth-schema.ts --yes"
   },
   "dependencies": {
     "@better-auth/drizzle-adapter": "^1.5.6",
+    "@stylora/contracts": "workspace:*",
     "@stylora/db": "workspace:*",
     "better-auth": "^1.5.6",
     "drizzle-orm": "^0.45.2"

@@ -1,12 +1,13 @@
 import { serve } from '@hono/node-server'
 import { auth, getBetterAuthTrustedOrigins } from '@stylora/auth'
-import { createAppDb, getDatabaseUrl, pingDatabase } from '@stylora/db'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
+import { type ApiAuthEnv, sessionContextMiddleware } from './middleware/auth.js'
 
-const app = new Hono()
-const db = createAppDb()
+const app = new Hono<ApiAuthEnv>()
 const trustedOrigins = new Set(getBetterAuthTrustedOrigins())
+
+app.use('*', sessionContextMiddleware())
 
 app.use(
   '/api/auth/*',
@@ -35,23 +36,7 @@ app.get('/', (c) => {
 })
 
 app.get('/health', (c) => {
-  return c.json({
-    status: 'ok',
-    databaseMode: process.env.DATABASE_URL ? 'env' : 'default-local',
-    databaseUrl: getDatabaseUrl().replace(/:[^:@/]+@/, ':****@'),
-  })
-})
-
-app.get('/health/db', async (c) => {
-  try {
-    await pingDatabase(db)
-
-    return c.json({ status: 'ok' })
-  } catch (error) {
-    const message = error instanceof Error ? error.message : 'Database connection failed'
-
-    return c.json({ status: 'error', message }, 503)
-  }
+  return c.json({ status: 'ok' })
 })
 
 serve(
