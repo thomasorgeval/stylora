@@ -15,6 +15,7 @@
     "build": "tsc -p tsconfig.json",
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate",
+    "test": "vitest run",
     "studio": "drizzle-kit studio",
     "wait": "tsx src/wait-for-db.ts"
   },
@@ -27,6 +28,7 @@
     "@types/pg": "^8.20.0",
     "drizzle-kit": "^0.31.10",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   }
 }
