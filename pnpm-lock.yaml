@@ -41,10 +41,16 @@ importers:
       hono:
         specifier: ^4.12.12
         version: 4.12.12
+      pg:
+        specifier: ^8.20.0
+        version: 8.20.0
     devDependencies:
       '@types/node':
         specifier: ^20.11.17
         version: 20.19.39
+      '@types/pg':
+        specifier: ^8.20.0
+        version: 8.20.0
       tsx:
         specifier: ^4.7.1
         version: 4.21.0

@@ -2,7 +2,13 @@ import { z } from 'zod'
 
 import { nonEmptyTrimmedStringSchema } from './common.js'
 
-export const apiErrorCodeSchema = z.enum(['UNAUTHENTICATED', 'NO_ACTIVE_ORGANIZATION', 'FORBIDDEN', 'VALIDATION_ERROR'])
+export const apiErrorCodeSchema = z.enum([
+  'UNAUTHENTICATED',
+  'NO_ACTIVE_ORGANIZATION',
+  'FORBIDDEN',
+  'VALIDATION_ERROR',
+  'NOT_FOUND',
+])
 
 export const apiErrorSchema = z.object({
   code: apiErrorCodeSchema,

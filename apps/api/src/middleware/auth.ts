@@ -3,7 +3,7 @@ import { getSessionFromHeaders, RequestAuthError, requireProjectPermission } fro
 import type { Context } from 'hono'
 import { createMiddleware } from 'hono/factory'
 
-type ProjectAction = 'create' | 'read' | 'update' | 'delete'
+export type ResourceAction = 'create' | 'read' | 'update' | 'delete'
 
 export type ApiAuthVariables = {
   auth: StyloraAuthorizationContext | null
@@ -20,7 +20,7 @@ type SessionContextService = {
 }
 
 type ProjectPermissionService = {
-  requireProjectPermission(headers: Headers, action: ProjectAction): Promise<StyloraAuthorizationContext>
+  requireProjectPermission(headers: Headers, action: ResourceAction): Promise<StyloraAuthorizationContext>
 }
 
 type RequestAuthErrorLike = {
@@ -62,7 +62,7 @@ export function sessionContextMiddleware(service: SessionContextService = { getS
 }
 
 export function createProjectPermissionGuard(
-  action: ProjectAction,
+  action: ResourceAction,
   service: ProjectPermissionService = { requireProjectPermission },
 ) {
   return createMiddleware<ApiAuthEnv>(async (c, next) => {

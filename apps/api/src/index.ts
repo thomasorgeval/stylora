@@ -3,6 +3,7 @@ import { auth, getBetterAuthTrustedOrigins } from '@stylora/auth'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { type ApiAuthEnv, sessionContextMiddleware } from './middleware/auth.js'
+import { createConnectionsRouter } from './routes/connections.js'
 import { createProjectsRouter } from './routes/projects.js'
 
 const app = new Hono<ApiAuthEnv>()
@@ -41,6 +42,7 @@ app.get('/health', (c) => {
 })
 
 app.route('/api/projects', createProjectsRouter())
+app.route('/api', createConnectionsRouter())
 
 serve(
   {

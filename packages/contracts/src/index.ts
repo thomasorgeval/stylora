@@ -1,4 +1,5 @@
 export * from './auth.js'
 export * from './common.js'
+export * from './connections.js'
 export * from './errors.js'
 export * from './projects.js'

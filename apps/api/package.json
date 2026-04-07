@@ -14,10 +14,12 @@
     "@stylora/db": "workspace:*",
     "@hono/node-server": "^1.19.13",
     "drizzle-orm": "^0.45.2",
-    "hono": "^4.12.12"
+    "hono": "^4.12.12",
+    "pg": "^8.20.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "@types/pg": "^8.20.0",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3",
     "vitest": "^4.1.2"

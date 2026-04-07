@@ -3,10 +3,13 @@ import { appDb, type Database, projects } from '@stylora/db'
 import { and, desc, eq } from 'drizzle-orm'
 import { Hono } from 'hono'
 
-import { notFoundError, parseJsonBody, validationError } from '../lib/http.js'
-import { type ApiAuthEnv, createProjectPermissionGuard, getAuthContext } from '../middleware/auth.js'
-
-type ProjectAction = 'create' | 'read' | 'update' | 'delete'
+import { notFoundError, parseValidatedJsonBody, parseValidatedParams } from '../lib/http.js'
+import {
+  type ApiAuthEnv,
+  createProjectPermissionGuard,
+  getAuthContext,
+  type ResourceAction,
+} from '../middleware/auth.js'
 
 export type ProjectRecord = typeof projects.$inferSelect
 
@@ -37,7 +40,7 @@ export type ProjectsRepository = {
   deleteProjectById(args: ProjectLookupArgs): Promise<boolean>
 }
 
-type ProjectGuardFactory = (action: ProjectAction) => ReturnType<typeof createProjectPermissionGuard>
+type ProjectGuardFactory = (action: ResourceAction) => ReturnType<typeof createProjectPermissionGuard>
 
 function buildProjectSlug(name: string) {
   const base = name
@@ -130,16 +133,10 @@ export function createProjectsRouter({
 
   router.post('/', guardFactory('create'), async (c) => {
     const authContext = getAuthContext(c)
-    const payload = await parseJsonBody(c.req.raw)
+    const parsedPayload = await parseValidatedJsonBody(c.req.raw, createProjectSchema, 'Project payload is invalid.')
 
-    if (payload === null) {
-      return c.json(validationError('Request body must be valid JSON.'), 400)
-    }
-
-    const parsedPayload = createProjectSchema.safeParse(payload)
-
-    if (!parsedPayload.success) {
-      return c.json(validationError('Project payload is invalid.', parsedPayload.error.flatten()), 400)
+    if (parsedPayload.error) {
+      return c.json(parsedPayload.error, 400)
     }
 
     const project = await repository.createProject({
@@ -153,10 +150,10 @@ export function createProjectsRouter({
 
   router.get('/:projectId', guardFactory('read'), async (c) => {
     const authContext = getAuthContext(c)
-    const parsedParams = projectIdParamsSchema.safeParse(c.req.param())
+    const parsedParams = parseValidatedParams(c.req.param(), projectIdParamsSchema, 'Project id is invalid.')
 
-    if (!parsedParams.success) {
-      return c.json(validationError('Project id is invalid.', parsedParams.error.flatten()), 400)
+    if (parsedParams.error) {
+      return c.json(parsedParams.error, 400)
     }
 
     const project = await repository.getProjectById({
@@ -173,21 +170,16 @@ export function createProjectsRouter({
 
   router.patch('/:projectId', guardFactory('update'), async (c) => {
     const authContext = getAuthContext(c)
-    const parsedParams = projectIdParamsSchema.safeParse(c.req.param())
-    const payload = await parseJsonBody(c.req.raw)
+    const parsedParams = parseValidatedParams(c.req.param(), projectIdParamsSchema, 'Project id is invalid.')
 
-    if (!parsedParams.success) {
-      return c.json(validationError('Project id is invalid.', parsedParams.error.flatten()), 400)
+    if (parsedParams.error) {
+      return c.json(parsedParams.error, 400)
     }
 
-    if (payload === null) {
-      return c.json(validationError('Request body must be valid JSON.'), 400)
-    }
+    const parsedPayload = await parseValidatedJsonBody(c.req.raw, updateProjectSchema, 'Project payload is invalid.')
 
-    const parsedPayload = updateProjectSchema.safeParse(payload)
-
-    if (!parsedPayload.success) {
-      return c.json(validationError('Project payload is invalid.', parsedPayload.error.flatten()), 400)
+    if (parsedPayload.error) {
+      return c.json(parsedPayload.error, 400)
     }
 
     const project = await repository.updateProjectById({
@@ -205,10 +197,10 @@ export function createProjectsRouter({
 
   router.delete('/:projectId', guardFactory('delete'), async (c) => {
     const authContext = getAuthContext(c)
-    const parsedParams = projectIdParamsSchema.safeParse(c.req.param())
+    const parsedParams = parseValidatedParams(c.req.param(), projectIdParamsSchema, 'Project id is invalid.')
 
-    if (!parsedParams.success) {
-      return c.json(validationError('Project id is invalid.', parsedParams.error.flatten()), 400)
+    if (parsedParams.error) {
+      return c.json(parsedParams.error, 400)
     }
 
     const deleted = await repository.deleteProjectById({

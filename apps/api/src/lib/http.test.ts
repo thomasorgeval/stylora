@@ -1,6 +1,7 @@
+import { createProjectSchema, projectIdParamsSchema } from '@stylora/contracts'
 import { describe, expect, it } from 'vitest'
 
-import { notFoundError, parseJsonBody, validationError } from './http.js'
+import { notFoundError, parseJsonBody, parseValidatedJsonBody, parseValidatedParams, validationError } from './http.js'
 
 describe('http helpers', () => {
   it('builds a validation error payload with optional details', () => {
@@ -36,5 +37,28 @@ describe('http helpers', () => {
     })
 
     await expect(parseJsonBody(request)).resolves.toBeNull()
+  })
+
+  it('validates and returns parsed JSON payloads', async () => {
+    const request = new Request('http://localhost/projects', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ name: '  Production  ' }),
+    })
+
+    await expect(parseValidatedJsonBody(request, createProjectSchema, 'Project payload is invalid.')).resolves.toEqual({
+      data: { name: 'Production' },
+      error: null,
+    })
+  })
+
+  it('returns a validation error payload when params are invalid', () => {
+    expect(parseValidatedParams({ projectId: 'not-a-uuid' }, projectIdParamsSchema, 'Project id is invalid.')).toEqual({
+      data: null,
+      error: expect.objectContaining({
+        code: 'VALIDATION_ERROR',
+        message: 'Project id is invalid.',
+      }),
+    })
   })
 })
